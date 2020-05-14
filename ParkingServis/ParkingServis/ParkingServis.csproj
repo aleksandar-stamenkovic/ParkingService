@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataLayer.cs" />
+    <Compile Include="Entiteti\FizickoLice.cs" />
     <Compile Include="Entiteti\JavnoMesto.cs" />
     <Compile Include="Entiteti\Parking.cs" />
     <Compile Include="Entiteti\PravnoLice.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapiranja\FizickoLiceMapiranje.cs" />
     <Compile Include="Mapiranja\JavnoMestoMapiranja.cs" />
     <Compile Include="Mapiranja\ParkingMapiranja.cs" />
     <Compile Include="Mapiranja\PravnoLiceMapiranja.cs" />
