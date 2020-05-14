@@ -106,5 +106,23 @@ namespace ParkingServis
             }
 
         }
+
+        private void cmdUcitavanjeFizickog_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                FizickoLice f = s.Load<FizickoLice>(2);
+
+                MessageBox.Show($"Ime: {f.Ime}, Jmbg: {f.Jmbg}");
+
+                s.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
