@@ -79,6 +79,7 @@
     <Compile Include="Entiteti\PretplatnickaKupovina.cs" />
     <Compile Include="Entiteti\UlicnoMesto.cs" />
     <Compile Include="Entiteti\Vozilo.cs" />
+    <Compile Include="Entiteti\Zakup.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +94,7 @@
     <Compile Include="Mapiranja\PretplatnickaKupovinaMapiranja.cs" />
     <Compile Include="Mapiranja\UlicnoMestoMapiranja.cs" />
     <Compile Include="Mapiranja\VoziloMapiranja.cs" />
+    <Compile Include="Mapiranja\ZakupMapiranja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
