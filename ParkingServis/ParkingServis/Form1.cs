@@ -106,5 +106,23 @@ namespace ParkingServis
             }
 
         }
+
+        private void cmdUcitavanjeUlicnogMesta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                UlicnoMesto p = s.Load<UlicnoMesto>(3);
+
+                MessageBox.Show(p.Zauzetost + " " + p.Zona + " " + p.NazivUlice);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
