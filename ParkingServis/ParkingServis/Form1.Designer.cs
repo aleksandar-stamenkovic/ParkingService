@@ -30,6 +30,7 @@
         {
             this.cmdUcitavanjeParkinga = new System.Windows.Forms.Button();
             this.cmdDodavanjeParkinga = new System.Windows.Forms.Button();
+            this.cmdVezaManyToOne = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeParkinga
@@ -52,11 +53,22 @@
             this.cmdDodavanjeParkinga.UseVisualStyleBackColor = true;
             this.cmdDodavanjeParkinga.Click += new System.EventHandler(this.cmdDodavanjeParkinga_Click);
             // 
+            // cmdVezaManyToOne
+            // 
+            this.cmdVezaManyToOne.Location = new System.Drawing.Point(13, 72);
+            this.cmdVezaManyToOne.Name = "cmdVezaManyToOne";
+            this.cmdVezaManyToOne.Size = new System.Drawing.Size(132, 23);
+            this.cmdVezaManyToOne.TabIndex = 1;
+            this.cmdVezaManyToOne.Text = "Veza many-to-one";
+            this.cmdVezaManyToOne.UseVisualStyleBackColor = true;
+            this.cmdVezaManyToOne.Click += new System.EventHandler(this.cmdVezaManyToOne_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdVezaManyToOne);
             this.Controls.Add(this.cmdDodavanjeParkinga);
             this.Controls.Add(this.cmdUcitavanjeParkinga);
             this.Name = "Form1";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button cmdUcitavanjeParkinga;
         private System.Windows.Forms.Button cmdDodavanjeParkinga;
+        private System.Windows.Forms.Button cmdVezaManyToOne;
     }
 }
 

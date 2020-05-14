@@ -28,6 +28,8 @@ namespace ParkingServis.Mapiranja
             Map(x => x.PodNadTip, "POD_NAD_TIP");
             Map(x => x.Montazna, "MONTAZNA");
             Map(x => x.BrNivoa, "BR_NIVOA");
+
+            HasMany(x => x.JavnaMesta).KeyColumn("ID_PARKINGA").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

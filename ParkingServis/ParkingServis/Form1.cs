@@ -67,5 +67,25 @@ namespace ParkingServis
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmdVezaManyToOne_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                //Ucitavaju se podaci o parkingu za zadatim brojem
+                JavnoMesto jm = s.Load<JavnoMesto>(5);
+
+                MessageBox.Show(jm.Sprat.ToString());
+                MessageBox.Show(jm.PripadaParkingu.Naziv);
+
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
     }
 }

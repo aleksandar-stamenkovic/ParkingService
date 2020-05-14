@@ -19,9 +19,11 @@ namespace ParkingServis.Entiteti
         public virtual bool Montazna { get; set; }
         public virtual int BrNivoa { get; set; }
 
+        public virtual IList<JavnoMesto> JavnaMesta { get; set; }
+
         public Parking()
         {
-
+            JavnaMesta = new List<JavnoMesto>();
         }
     }
 }
