@@ -36,5 +36,36 @@ namespace ParkingServis
             }
 
         }
+
+        private void cmdDodavanjeParkinga_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Parking p = new Parking()
+                {
+                    Naziv = "Novi PArking",
+                    Adresa = "Cara LAzara 76",
+                    Zona = 3,
+                    BrMesta = 90,
+                    RadnoVreme = "24h",
+                    GarazaFleg = false,
+                    PodNadTip = "Nad",
+                    Montazna = true,
+                    BrNivoa = 4
+                };
+
+
+                s.Save(p);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

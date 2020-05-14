@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.cmdUcitavanjeParkinga = new System.Windows.Forms.Button();
+            this.cmdDodavanjeParkinga = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeParkinga
@@ -41,11 +42,22 @@
             this.cmdUcitavanjeParkinga.UseVisualStyleBackColor = true;
             this.cmdUcitavanjeParkinga.Click += new System.EventHandler(this.cmdUcitavanjeParkinga_Click);
             // 
+            // cmdDodavanjeParkinga
+            // 
+            this.cmdDodavanjeParkinga.Location = new System.Drawing.Point(13, 43);
+            this.cmdDodavanjeParkinga.Name = "cmdDodavanjeParkinga";
+            this.cmdDodavanjeParkinga.Size = new System.Drawing.Size(132, 23);
+            this.cmdDodavanjeParkinga.TabIndex = 1;
+            this.cmdDodavanjeParkinga.Text = "Dodavanje parkinga";
+            this.cmdDodavanjeParkinga.UseVisualStyleBackColor = true;
+            this.cmdDodavanjeParkinga.Click += new System.EventHandler(this.cmdDodavanjeParkinga_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdDodavanjeParkinga);
             this.Controls.Add(this.cmdUcitavanjeParkinga);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -56,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Button cmdUcitavanjeParkinga;
+        private System.Windows.Forms.Button cmdDodavanjeParkinga;
     }
 }
 
