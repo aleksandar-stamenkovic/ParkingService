@@ -144,5 +144,36 @@ namespace ParkingServis
 
 
         }
+
+        private void cmdDodajJavnoMesto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Parking p = new Parking();
+
+                p = s.Load<Parking>(8);
+
+                JavnoMesto jm = new JavnoMesto()
+                {
+                    Zauzetost = "Ne",
+                    RedBrMesta = 14,
+                    GarazaFleg = true,
+                    Sprat = 7,
+                };
+
+                p.JavnaMesta.Add(jm);
+                jm.PripadaParkingu = p;
+
+                s.Save(jm);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

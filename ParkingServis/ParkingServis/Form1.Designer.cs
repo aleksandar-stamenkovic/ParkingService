@@ -34,6 +34,7 @@
             this.cmdUcitavanjePravnogLica = new System.Windows.Forms.Button();
             this.cmdUcitavanjeUlicnogMesta = new System.Windows.Forms.Button();
             this.cmdUcitavanjeVozila = new System.Windows.Forms.Button();
+            this.cmdDodajJavnoMesto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeParkinga
@@ -69,7 +70,7 @@
             // cmdUcitavanjePravnogLica
             // 
             this.cmdUcitavanjePravnogLica.Location = new System.Drawing.Point(166, 13);
-            this.cmdUcitavanjePravnogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdUcitavanjePravnogLica.Margin = new System.Windows.Forms.Padding(2);
             this.cmdUcitavanjePravnogLica.Name = "cmdUcitavanjePravnogLica";
             this.cmdUcitavanjePravnogLica.Size = new System.Drawing.Size(122, 23);
             this.cmdUcitavanjePravnogLica.TabIndex = 2;
@@ -80,7 +81,7 @@
             // cmdUcitavanjeUlicnogMesta
             // 
             this.cmdUcitavanjeUlicnogMesta.Location = new System.Drawing.Point(431, 20);
-            this.cmdUcitavanjeUlicnogMesta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdUcitavanjeUlicnogMesta.Margin = new System.Windows.Forms.Padding(2);
             this.cmdUcitavanjeUlicnogMesta.Name = "cmdUcitavanjeUlicnogMesta";
             this.cmdUcitavanjeUlicnogMesta.Size = new System.Drawing.Size(138, 19);
             this.cmdUcitavanjeUlicnogMesta.TabIndex = 3;
@@ -98,11 +99,22 @@
             this.cmdUcitavanjeVozila.UseVisualStyleBackColor = true;
             this.cmdUcitavanjeVozila.Click += new System.EventHandler(this.cmdUcitavanjeVozila_Click);
             // 
+            // cmdDodajJavnoMesto
+            // 
+            this.cmdDodajJavnoMesto.Location = new System.Drawing.Point(13, 102);
+            this.cmdDodajJavnoMesto.Name = "cmdDodajJavnoMesto";
+            this.cmdDodajJavnoMesto.Size = new System.Drawing.Size(132, 23);
+            this.cmdDodajJavnoMesto.TabIndex = 5;
+            this.cmdDodajJavnoMesto.Text = "Dodaj javno mesto";
+            this.cmdDodajJavnoMesto.UseVisualStyleBackColor = true;
+            this.cmdDodajJavnoMesto.Click += new System.EventHandler(this.cmdDodajJavnoMesto_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(629, 291);
+            this.Controls.Add(this.cmdDodajJavnoMesto);
             this.Controls.Add(this.cmdUcitavanjeVozila);
             this.Controls.Add(this.cmdUcitavanjeUlicnogMesta);
             this.Controls.Add(this.cmdUcitavanjePravnogLica);
@@ -123,6 +135,7 @@
         private System.Windows.Forms.Button cmdUcitavanjePravnogLica;
         private System.Windows.Forms.Button cmdUcitavanjeUlicnogMesta;
         private System.Windows.Forms.Button cmdUcitavanjeVozila;
+        private System.Windows.Forms.Button cmdDodajJavnoMesto;
     }
 }
 
