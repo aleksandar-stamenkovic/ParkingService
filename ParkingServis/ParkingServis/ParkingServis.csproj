@@ -73,8 +73,10 @@
     <Compile Include="DataLayer.cs" />
     <Compile Include="Entiteti\FizickoLice.cs" />
     <Compile Include="Entiteti\JavnoMesto.cs" />
+    <Compile Include="Entiteti\JednokratnaKupovina.cs" />
     <Compile Include="Entiteti\Parking.cs" />
     <Compile Include="Entiteti\PravnoLice.cs" />
+    <Compile Include="Entiteti\PretplatnickaKupovina.cs" />
     <Compile Include="Entiteti\UlicnoMesto.cs" />
     <Compile Include="Entiteti\Vozilo.cs" />
     <Compile Include="Form1.cs">
@@ -85,8 +87,10 @@
     </Compile>
     <Compile Include="Mapiranja\FizickoLiceMapiranje.cs" />
     <Compile Include="Mapiranja\JavnoMestoMapiranja.cs" />
+    <Compile Include="Mapiranja\JednokratnaKupovinaMapiranja.cs" />
     <Compile Include="Mapiranja\ParkingMapiranja.cs" />
     <Compile Include="Mapiranja\PravnoLiceMapiranja.cs" />
+    <Compile Include="Mapiranja\PretplatnickaKupovinaMapiranja.cs" />
     <Compile Include="Mapiranja\UlicnoMestoMapiranja.cs" />
     <Compile Include="Mapiranja\VoziloMapiranja.cs" />
     <Compile Include="Program.cs" />
