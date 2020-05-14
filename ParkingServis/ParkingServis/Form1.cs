@@ -87,5 +87,24 @@ namespace ParkingServis
                 MessageBox.Show(ec.Message);
             }
         }
+
+        private void cmdUcitavanjePravnogLica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                PravnoLice p = s.Load<PravnoLice>(3);
+
+                MessageBox.Show(p.Pib + " " + p.Naziv + " " + p.ImeOvlascenog);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
