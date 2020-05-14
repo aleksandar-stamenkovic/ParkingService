@@ -15,9 +15,11 @@ namespace ParkingServis.Entiteti
         public virtual string BrTelefona { get; set; }
         public virtual string ImeOvlascenog { get; set; }
 
+        public virtual IList<Vozilo> Vozila { get; set; }
+
         public PravnoLice()
         {
-
+            Vozila = new List<Vozilo>();
         }
     }
 }

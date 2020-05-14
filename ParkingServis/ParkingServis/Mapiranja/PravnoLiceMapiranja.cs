@@ -24,6 +24,8 @@ namespace ParkingServis.Mapiranja
             Map(x => x.Adresa, "ADRESA");
             Map(x => x.BrTelefona, "BR_TELEFONA");
             Map(x => x.ImeOvlascenog, "IME_OVLASCENOG");
+
+            HasMany(x => x.Vozila).KeyColumn("ID_PRAVNOG").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

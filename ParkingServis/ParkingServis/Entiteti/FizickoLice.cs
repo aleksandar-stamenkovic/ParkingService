@@ -20,9 +20,11 @@ namespace ParkingServis.Entiteti
         public virtual string BrVozacke { get; set; }
         public virtual string ZonaBoravka { get; set; }
 
+        public virtual IList<Vozilo> Vozila { get; set; }
+
         public FizickoLice()
         {
-
+            Vozila = new List<Vozilo>();
         }
     }
 }

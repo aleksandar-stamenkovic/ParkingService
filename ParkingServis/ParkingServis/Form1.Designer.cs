@@ -33,14 +33,14 @@
             this.cmdVezaManyToOne = new System.Windows.Forms.Button();
             this.cmdUcitavanjePravnogLica = new System.Windows.Forms.Button();
             this.cmdUcitavanjeUlicnogMesta = new System.Windows.Forms.Button();
+            this.cmdUcitavanjeVozila = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeParkinga
             // 
-            this.cmdUcitavanjeParkinga.Location = new System.Drawing.Point(17, 16);
-            this.cmdUcitavanjeParkinga.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdUcitavanjeParkinga.Location = new System.Drawing.Point(13, 13);
             this.cmdUcitavanjeParkinga.Name = "cmdUcitavanjeParkinga";
-            this.cmdUcitavanjeParkinga.Size = new System.Drawing.Size(176, 28);
+            this.cmdUcitavanjeParkinga.Size = new System.Drawing.Size(132, 23);
             this.cmdUcitavanjeParkinga.TabIndex = 0;
             this.cmdUcitavanjeParkinga.Text = "Ucitavanje parkinga";
             this.cmdUcitavanjeParkinga.UseVisualStyleBackColor = true;
@@ -48,10 +48,9 @@
             // 
             // cmdDodavanjeParkinga
             // 
-            this.cmdDodavanjeParkinga.Location = new System.Drawing.Point(17, 53);
-            this.cmdDodavanjeParkinga.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdDodavanjeParkinga.Location = new System.Drawing.Point(13, 43);
             this.cmdDodavanjeParkinga.Name = "cmdDodavanjeParkinga";
-            this.cmdDodavanjeParkinga.Size = new System.Drawing.Size(176, 28);
+            this.cmdDodavanjeParkinga.Size = new System.Drawing.Size(132, 23);
             this.cmdDodavanjeParkinga.TabIndex = 1;
             this.cmdDodavanjeParkinga.Text = "Dodavanje parkinga";
             this.cmdDodavanjeParkinga.UseVisualStyleBackColor = true;
@@ -59,10 +58,9 @@
             // 
             // cmdVezaManyToOne
             // 
-            this.cmdVezaManyToOne.Location = new System.Drawing.Point(17, 89);
-            this.cmdVezaManyToOne.Margin = new System.Windows.Forms.Padding(4);
+            this.cmdVezaManyToOne.Location = new System.Drawing.Point(13, 72);
             this.cmdVezaManyToOne.Name = "cmdVezaManyToOne";
-            this.cmdVezaManyToOne.Size = new System.Drawing.Size(176, 28);
+            this.cmdVezaManyToOne.Size = new System.Drawing.Size(132, 23);
             this.cmdVezaManyToOne.TabIndex = 1;
             this.cmdVezaManyToOne.Text = "Veza many-to-one";
             this.cmdVezaManyToOne.UseVisualStyleBackColor = true;
@@ -70,9 +68,10 @@
             // 
             // cmdUcitavanjePravnogLica
             // 
-            this.cmdUcitavanjePravnogLica.Location = new System.Drawing.Point(222, 16);
+            this.cmdUcitavanjePravnogLica.Location = new System.Drawing.Point(166, 13);
+            this.cmdUcitavanjePravnogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdUcitavanjePravnogLica.Name = "cmdUcitavanjePravnogLica";
-            this.cmdUcitavanjePravnogLica.Size = new System.Drawing.Size(163, 28);
+            this.cmdUcitavanjePravnogLica.Size = new System.Drawing.Size(122, 23);
             this.cmdUcitavanjePravnogLica.TabIndex = 2;
             this.cmdUcitavanjePravnogLica.Text = "Ucitavanje pravnog lica";
             this.cmdUcitavanjePravnogLica.UseVisualStyleBackColor = true;
@@ -80,25 +79,36 @@
             // 
             // cmdUcitavanjeUlicnogMesta
             // 
-            this.cmdUcitavanjeUlicnogMesta.Location = new System.Drawing.Point(575, 25);
+            this.cmdUcitavanjeUlicnogMesta.Location = new System.Drawing.Point(431, 20);
+            this.cmdUcitavanjeUlicnogMesta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdUcitavanjeUlicnogMesta.Name = "cmdUcitavanjeUlicnogMesta";
-            this.cmdUcitavanjeUlicnogMesta.Size = new System.Drawing.Size(184, 23);
+            this.cmdUcitavanjeUlicnogMesta.Size = new System.Drawing.Size(138, 19);
             this.cmdUcitavanjeUlicnogMesta.TabIndex = 3;
             this.cmdUcitavanjeUlicnogMesta.Text = "Ucitavanje ulicnog mesta";
             this.cmdUcitavanjeUlicnogMesta.UseVisualStyleBackColor = true;
             this.cmdUcitavanjeUlicnogMesta.Click += new System.EventHandler(this.cmdUcitavanjeUlicnogMesta_Click);
             // 
+            // cmdUcitavanjeVozila
+            // 
+            this.cmdUcitavanjeVozila.Location = new System.Drawing.Point(13, 155);
+            this.cmdUcitavanjeVozila.Name = "cmdUcitavanjeVozila";
+            this.cmdUcitavanjeVozila.Size = new System.Drawing.Size(132, 23);
+            this.cmdUcitavanjeVozila.TabIndex = 4;
+            this.cmdUcitavanjeVozila.Text = "Ucitavanje vozila";
+            this.cmdUcitavanjeVozila.UseVisualStyleBackColor = true;
+            this.cmdUcitavanjeVozila.Click += new System.EventHandler(this.cmdUcitavanjeVozila_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmdUcitavanjeVozila);
             this.Controls.Add(this.cmdUcitavanjeUlicnogMesta);
             this.Controls.Add(this.cmdUcitavanjePravnogLica);
             this.Controls.Add(this.cmdVezaManyToOne);
             this.Controls.Add(this.cmdDodavanjeParkinga);
             this.Controls.Add(this.cmdUcitavanjeParkinga);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -112,6 +122,7 @@
         private System.Windows.Forms.Button cmdVezaManyToOne;
         private System.Windows.Forms.Button cmdUcitavanjePravnogLica;
         private System.Windows.Forms.Button cmdUcitavanjeUlicnogMesta;
+        private System.Windows.Forms.Button cmdUcitavanjeVozila;
     }
 }
 

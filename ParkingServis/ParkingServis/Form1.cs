@@ -124,5 +124,25 @@ namespace ParkingServis
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmdUcitavanjeVozila_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Vozilo v = s.Load<Vozilo>(2);
+
+                MessageBox.Show($"Model: {v.Model}, Registracija: {v.Registarcija}");
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
     }
 }
