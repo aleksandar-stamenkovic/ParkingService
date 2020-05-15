@@ -163,11 +163,13 @@ namespace ParkingServis
                     Sprat = 7,
                 };
 
-                p.JavnaMesta.Add(jm);
                 jm.PripadaParkingu = p;
 
-                s.Save(jm);
+                p.JavnaMesta.Add(jm);
+                
+                s.Save(p);
 
+                s.Flush();
                 s.Close();
             }
             catch (Exception ex)

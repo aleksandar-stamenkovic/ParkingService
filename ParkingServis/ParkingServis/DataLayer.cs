@@ -41,7 +41,7 @@ namespace ParkingServis
                     c.Is("DATA SOURCE=gislab-oracle.elfak.ni.ac.rs:1521/SBP_PDB;PERSIST SECURITY INFO=True;USER ID=S16874;Password=ACA16874"));
 
                 return Fluently.Configure()
-                    .Database(cfg)
+                    .Database(cfg.ShowSql())
                     .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ParkingMapiranja>())
                     //.ExposeConfiguration(BuildSchema)
                     .BuildSessionFactory();
