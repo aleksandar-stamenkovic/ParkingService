@@ -221,5 +221,29 @@ namespace ParkingServis
 
             s.Close();
         }
+
+        private void cmdDodavanjeUlicnogMesta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                UlicnoMesto um = new UlicnoMesto()
+                {
+                    Zauzetost = "Ne",
+                    Zona = 2,
+                    NazivUlice = "Cara Lazara"
+                };
+
+                s.Save(um);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
