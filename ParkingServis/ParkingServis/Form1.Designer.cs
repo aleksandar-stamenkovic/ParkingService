@@ -45,14 +45,14 @@
             this.cmdDodavanjeJednokratneKupovine = new System.Windows.Forms.Button();
             this.cmdUcitavanjePretplatnickeKupovine = new System.Windows.Forms.Button();
             this.cmdDodavanjePretplatnickeKupovine = new System.Windows.Forms.Button();
+            this.cmdDodavanjeVozila = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeParkinga
             // 
-            this.cmdUcitavanjeParkinga.Location = new System.Drawing.Point(17, 16);
-            this.cmdUcitavanjeParkinga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdUcitavanjeParkinga.Location = new System.Drawing.Point(12, 12);
             this.cmdUcitavanjeParkinga.Name = "cmdUcitavanjeParkinga";
-            this.cmdUcitavanjeParkinga.Size = new System.Drawing.Size(187, 28);
+            this.cmdUcitavanjeParkinga.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeParkinga.TabIndex = 0;
             this.cmdUcitavanjeParkinga.Text = "Ucitavanje parkinga";
             this.cmdUcitavanjeParkinga.UseVisualStyleBackColor = true;
@@ -60,10 +60,9 @@
             // 
             // cmdDodavanjeParkinga
             // 
-            this.cmdDodavanjeParkinga.Location = new System.Drawing.Point(17, 53);
-            this.cmdDodavanjeParkinga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdDodavanjeParkinga.Location = new System.Drawing.Point(12, 41);
             this.cmdDodavanjeParkinga.Name = "cmdDodavanjeParkinga";
-            this.cmdDodavanjeParkinga.Size = new System.Drawing.Size(187, 28);
+            this.cmdDodavanjeParkinga.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjeParkinga.TabIndex = 1;
             this.cmdDodavanjeParkinga.Text = "Dodavanje parkinga";
             this.cmdDodavanjeParkinga.UseVisualStyleBackColor = true;
@@ -71,21 +70,20 @@
             // 
             // cmdVezaManyToOne
             // 
-            this.cmdVezaManyToOne.Location = new System.Drawing.Point(17, 89);
-            this.cmdVezaManyToOne.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdVezaManyToOne.Location = new System.Drawing.Point(12, 80);
             this.cmdVezaManyToOne.Name = "cmdVezaManyToOne";
-            this.cmdVezaManyToOne.Size = new System.Drawing.Size(187, 28);
+            this.cmdVezaManyToOne.Size = new System.Drawing.Size(183, 23);
             this.cmdVezaManyToOne.TabIndex = 1;
-            this.cmdVezaManyToOne.Text = "Veza many-to-one";
+            this.cmdVezaManyToOne.Text = "Ucitavanje javnog mesta";
             this.cmdVezaManyToOne.UseVisualStyleBackColor = true;
             this.cmdVezaManyToOne.Click += new System.EventHandler(this.cmdVezaManyToOne_Click);
             // 
             // cmdUcitavanjePravnogLica
             // 
-            this.cmdUcitavanjePravnogLica.Location = new System.Drawing.Point(242, 16);
-            this.cmdUcitavanjePravnogLica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmdUcitavanjePravnogLica.Location = new System.Drawing.Point(237, 12);
+            this.cmdUcitavanjePravnogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdUcitavanjePravnogLica.Name = "cmdUcitavanjePravnogLica";
-            this.cmdUcitavanjePravnogLica.Size = new System.Drawing.Size(232, 28);
+            this.cmdUcitavanjePravnogLica.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjePravnogLica.TabIndex = 2;
             this.cmdUcitavanjePravnogLica.Text = "Ucitavanje pravnog lica";
             this.cmdUcitavanjePravnogLica.UseVisualStyleBackColor = true;
@@ -93,10 +91,10 @@
             // 
             // cmdUcitavanjeUlicnogMesta
             // 
-            this.cmdUcitavanjeUlicnogMesta.Location = new System.Drawing.Point(17, 267);
-            this.cmdUcitavanjeUlicnogMesta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmdUcitavanjeUlicnogMesta.Location = new System.Drawing.Point(12, 294);
+            this.cmdUcitavanjeUlicnogMesta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdUcitavanjeUlicnogMesta.Name = "cmdUcitavanjeUlicnogMesta";
-            this.cmdUcitavanjeUlicnogMesta.Size = new System.Drawing.Size(187, 28);
+            this.cmdUcitavanjeUlicnogMesta.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeUlicnogMesta.TabIndex = 3;
             this.cmdUcitavanjeUlicnogMesta.Text = "Ucitavanje ulicnog mesta";
             this.cmdUcitavanjeUlicnogMesta.UseVisualStyleBackColor = true;
@@ -104,10 +102,9 @@
             // 
             // cmdUcitavanjeVozila
             // 
-            this.cmdUcitavanjeVozila.Location = new System.Drawing.Point(17, 161);
-            this.cmdUcitavanjeVozila.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdUcitavanjeVozila.Location = new System.Drawing.Point(12, 152);
             this.cmdUcitavanjeVozila.Name = "cmdUcitavanjeVozila";
-            this.cmdUcitavanjeVozila.Size = new System.Drawing.Size(187, 28);
+            this.cmdUcitavanjeVozila.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeVozila.TabIndex = 4;
             this.cmdUcitavanjeVozila.Text = "Ucitavanje vozila";
             this.cmdUcitavanjeVozila.UseVisualStyleBackColor = true;
@@ -115,21 +112,19 @@
             // 
             // cmdDodajJavnoMesto
             // 
-            this.cmdDodajJavnoMesto.Location = new System.Drawing.Point(17, 126);
-            this.cmdDodajJavnoMesto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdDodajJavnoMesto.Location = new System.Drawing.Point(12, 109);
             this.cmdDodajJavnoMesto.Name = "cmdDodajJavnoMesto";
-            this.cmdDodajJavnoMesto.Size = new System.Drawing.Size(187, 28);
+            this.cmdDodajJavnoMesto.Size = new System.Drawing.Size(183, 23);
             this.cmdDodajJavnoMesto.TabIndex = 5;
-            this.cmdDodajJavnoMesto.Text = "Dodaj javno mesto";
+            this.cmdDodajJavnoMesto.Text = "Dodavanje javnog mesta";
             this.cmdDodajJavnoMesto.UseVisualStyleBackColor = true;
             this.cmdDodajJavnoMesto.Click += new System.EventHandler(this.cmdDodajJavnoMesto_Click);
             // 
             // cmdUcitavanjeZakupa
             // 
-            this.cmdUcitavanjeZakupa.Location = new System.Drawing.Point(17, 197);
-            this.cmdUcitavanjeZakupa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdUcitavanjeZakupa.Location = new System.Drawing.Point(12, 224);
             this.cmdUcitavanjeZakupa.Name = "cmdUcitavanjeZakupa";
-            this.cmdUcitavanjeZakupa.Size = new System.Drawing.Size(187, 28);
+            this.cmdUcitavanjeZakupa.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeZakupa.TabIndex = 6;
             this.cmdUcitavanjeZakupa.Text = "Ucitavanje zakupa";
             this.cmdUcitavanjeZakupa.UseVisualStyleBackColor = true;
@@ -137,10 +132,9 @@
             // 
             // cmdDodavanjeZakupa
             // 
-            this.cmdDodavanjeZakupa.Location = new System.Drawing.Point(17, 233);
-            this.cmdDodavanjeZakupa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdDodavanjeZakupa.Location = new System.Drawing.Point(12, 251);
             this.cmdDodavanjeZakupa.Name = "cmdDodavanjeZakupa";
-            this.cmdDodavanjeZakupa.Size = new System.Drawing.Size(187, 28);
+            this.cmdDodavanjeZakupa.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjeZakupa.TabIndex = 7;
             this.cmdDodavanjeZakupa.Text = "Dodavanje zakupa";
             this.cmdDodavanjeZakupa.UseVisualStyleBackColor = true;
@@ -148,10 +142,9 @@
             // 
             // cmdDodavanjeUlicnogMesta
             // 
-            this.cmdDodavanjeUlicnogMesta.Location = new System.Drawing.Point(17, 302);
-            this.cmdDodavanjeUlicnogMesta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmdDodavanjeUlicnogMesta.Location = new System.Drawing.Point(12, 322);
             this.cmdDodavanjeUlicnogMesta.Name = "cmdDodavanjeUlicnogMesta";
-            this.cmdDodavanjeUlicnogMesta.Size = new System.Drawing.Size(187, 28);
+            this.cmdDodavanjeUlicnogMesta.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjeUlicnogMesta.TabIndex = 8;
             this.cmdDodavanjeUlicnogMesta.Text = "Dodavanje ulicnog mesta";
             this.cmdDodavanjeUlicnogMesta.UseVisualStyleBackColor = true;
@@ -159,9 +152,10 @@
             // 
             // cmdUcitavanjeFizickogLica
             // 
-            this.cmdUcitavanjeFizickogLica.Location = new System.Drawing.Point(242, 89);
+            this.cmdUcitavanjeFizickogLica.Location = new System.Drawing.Point(237, 80);
+            this.cmdUcitavanjeFizickogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdUcitavanjeFizickogLica.Name = "cmdUcitavanjeFizickogLica";
-            this.cmdUcitavanjeFizickogLica.Size = new System.Drawing.Size(232, 28);
+            this.cmdUcitavanjeFizickogLica.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeFizickogLica.TabIndex = 9;
             this.cmdUcitavanjeFizickogLica.Text = "Ucitavanje fizickog lica";
             this.cmdUcitavanjeFizickogLica.UseVisualStyleBackColor = true;
@@ -169,9 +163,10 @@
             // 
             // cmdDodavanjePravnogLica
             // 
-            this.cmdDodavanjePravnogLica.Location = new System.Drawing.Point(242, 53);
+            this.cmdDodavanjePravnogLica.Location = new System.Drawing.Point(237, 39);
+            this.cmdDodavanjePravnogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdDodavanjePravnogLica.Name = "cmdDodavanjePravnogLica";
-            this.cmdDodavanjePravnogLica.Size = new System.Drawing.Size(232, 28);
+            this.cmdDodavanjePravnogLica.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjePravnogLica.TabIndex = 10;
             this.cmdDodavanjePravnogLica.Text = "Dodavanje pravnog lica";
             this.cmdDodavanjePravnogLica.UseVisualStyleBackColor = true;
@@ -179,9 +174,10 @@
             // 
             // cmdDodavanjeFizickogLica
             // 
-            this.cmdDodavanjeFizickogLica.Location = new System.Drawing.Point(242, 126);
+            this.cmdDodavanjeFizickogLica.Location = new System.Drawing.Point(237, 107);
+            this.cmdDodavanjeFizickogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdDodavanjeFizickogLica.Name = "cmdDodavanjeFizickogLica";
-            this.cmdDodavanjeFizickogLica.Size = new System.Drawing.Size(232, 28);
+            this.cmdDodavanjeFizickogLica.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjeFizickogLica.TabIndex = 11;
             this.cmdDodavanjeFizickogLica.Text = "Dodavanje fizickog lica";
             this.cmdDodavanjeFizickogLica.UseVisualStyleBackColor = true;
@@ -189,9 +185,10 @@
             // 
             // cmdUcitavanjeJednokratneKupovine
             // 
-            this.cmdUcitavanjeJednokratneKupovine.Location = new System.Drawing.Point(242, 161);
+            this.cmdUcitavanjeJednokratneKupovine.Location = new System.Drawing.Point(237, 152);
+            this.cmdUcitavanjeJednokratneKupovine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdUcitavanjeJednokratneKupovine.Name = "cmdUcitavanjeJednokratneKupovine";
-            this.cmdUcitavanjeJednokratneKupovine.Size = new System.Drawing.Size(232, 28);
+            this.cmdUcitavanjeJednokratneKupovine.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeJednokratneKupovine.TabIndex = 12;
             this.cmdUcitavanjeJednokratneKupovine.Text = "Ucitavanje jednokratne kupovine";
             this.cmdUcitavanjeJednokratneKupovine.UseVisualStyleBackColor = true;
@@ -199,9 +196,10 @@
             // 
             // cmdDodavanjeJednokratneKupovine
             // 
-            this.cmdDodavanjeJednokratneKupovine.Location = new System.Drawing.Point(242, 197);
+            this.cmdDodavanjeJednokratneKupovine.Location = new System.Drawing.Point(237, 179);
+            this.cmdDodavanjeJednokratneKupovine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdDodavanjeJednokratneKupovine.Name = "cmdDodavanjeJednokratneKupovine";
-            this.cmdDodavanjeJednokratneKupovine.Size = new System.Drawing.Size(232, 28);
+            this.cmdDodavanjeJednokratneKupovine.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjeJednokratneKupovine.TabIndex = 13;
             this.cmdDodavanjeJednokratneKupovine.Text = "Dodavanje jednokratne kupovine";
             this.cmdDodavanjeJednokratneKupovine.UseVisualStyleBackColor = true;
@@ -209,9 +207,10 @@
             // 
             // cmdUcitavanjePretplatnickeKupovine
             // 
-            this.cmdUcitavanjePretplatnickeKupovine.Location = new System.Drawing.Point(242, 233);
+            this.cmdUcitavanjePretplatnickeKupovine.Location = new System.Drawing.Point(237, 224);
+            this.cmdUcitavanjePretplatnickeKupovine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdUcitavanjePretplatnickeKupovine.Name = "cmdUcitavanjePretplatnickeKupovine";
-            this.cmdUcitavanjePretplatnickeKupovine.Size = new System.Drawing.Size(232, 28);
+            this.cmdUcitavanjePretplatnickeKupovine.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjePretplatnickeKupovine.TabIndex = 14;
             this.cmdUcitavanjePretplatnickeKupovine.Text = "Ucitavanje pretplatnicke kupovine";
             this.cmdUcitavanjePretplatnickeKupovine.UseVisualStyleBackColor = true;
@@ -219,19 +218,31 @@
             // 
             // cmdDodavanjePretplatnickeKupovine
             // 
-            this.cmdDodavanjePretplatnickeKupovine.Location = new System.Drawing.Point(242, 267);
+            this.cmdDodavanjePretplatnickeKupovine.Location = new System.Drawing.Point(237, 251);
+            this.cmdDodavanjePretplatnickeKupovine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmdDodavanjePretplatnickeKupovine.Name = "cmdDodavanjePretplatnickeKupovine";
-            this.cmdDodavanjePretplatnickeKupovine.Size = new System.Drawing.Size(232, 28);
+            this.cmdDodavanjePretplatnickeKupovine.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjePretplatnickeKupovine.TabIndex = 15;
             this.cmdDodavanjePretplatnickeKupovine.Text = "Dodavanje pretplatnicke kupovine";
             this.cmdDodavanjePretplatnickeKupovine.UseVisualStyleBackColor = true;
             this.cmdDodavanjePretplatnickeKupovine.Click += new System.EventHandler(this.cmdDodavanjePretplatnickeKupovine_Click);
             // 
+            // cmdDodavanjeVozila
+            // 
+            this.cmdDodavanjeVozila.Location = new System.Drawing.Point(12, 182);
+            this.cmdDodavanjeVozila.Name = "cmdDodavanjeVozila";
+            this.cmdDodavanjeVozila.Size = new System.Drawing.Size(183, 23);
+            this.cmdDodavanjeVozila.TabIndex = 16;
+            this.cmdDodavanjeVozila.Text = "Dodavanje vozila";
+            this.cmdDodavanjeVozila.UseVisualStyleBackColor = true;
+            this.cmdDodavanjeVozila.Click += new System.EventHandler(this.cmdDodavanjeVozila_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 447);
+            this.ClientSize = new System.Drawing.Size(674, 459);
+            this.Controls.Add(this.cmdDodavanjeVozila);
             this.Controls.Add(this.cmdDodavanjePretplatnickeKupovine);
             this.Controls.Add(this.cmdUcitavanjePretplatnickeKupovine);
             this.Controls.Add(this.cmdDodavanjeJednokratneKupovine);
@@ -249,7 +260,6 @@
             this.Controls.Add(this.cmdVezaManyToOne);
             this.Controls.Add(this.cmdDodavanjeParkinga);
             this.Controls.Add(this.cmdUcitavanjeParkinga);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -275,6 +285,7 @@
         private System.Windows.Forms.Button cmdDodavanjeJednokratneKupovine;
         private System.Windows.Forms.Button cmdUcitavanjePretplatnickeKupovine;
         private System.Windows.Forms.Button cmdDodavanjePretplatnickeKupovine;
+        private System.Windows.Forms.Button cmdDodavanjeVozila;
     }
 }
 

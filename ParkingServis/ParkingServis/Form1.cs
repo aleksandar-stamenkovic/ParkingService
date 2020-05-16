@@ -266,14 +266,10 @@ namespace ParkingServis
 
         private void cmdDodavanjePravnogLica_Click(object sender, EventArgs e)
         {
-            /*try nije testirana jer imamo problem sa vozilom najpre treba da dodamo neko vozilo koje nije zauzeto pa onda da pustimo dodavanje
+            try
             {
                 ISession s = DataLayer.GetSession();
 
-
-                Vozilo v = new Vozilo();
-
-                v = s.Load<Vozilo>(9);//ucitavanje nekog vozila
 
                 PravnoLice p = new PravnoLice()
                 {
@@ -285,10 +281,6 @@ namespace ParkingServis
 
                 };
 
-                p.Vozila.Add(v);//dodavanje vozila u listu vozila FizickogLica
-
-                v.FizPravnoFleg = 1;//setovanje flega vozila
-                v.PravnoLice = p;//dodavanje vozilu referencu na vlasnika(PravnoLice)
 
                 s.Save(p);
 
@@ -298,7 +290,7 @@ namespace ParkingServis
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
         }
 
         private void cmdDodavanjeFizickogLica_Click(object sender, EventArgs e)
@@ -307,13 +299,10 @@ namespace ParkingServis
             {
                 ISession s = DataLayer.GetSession();
 
-                Vozilo v = new Vozilo();
-
-                v = s.Load<Vozilo>(10);//ucitavanje nekog vozila
 
                 FizickoLice p = new FizickoLice()
                 {
-                    Jmbg = 1112223334445,
+                    Jmbg = 1112223334446,
                     Ime = "Petar",
                     ImeRoditelja = "Milovan",
                     Prezime = "Petrovic",
@@ -325,11 +314,6 @@ namespace ParkingServis
                     ZonaBoravka = "2"
 
                 };
-
-                p.Vozila.Add(v);//dodavanje vozila u listu vozila FizickogLica
-
-                v.FizPravnoFleg = 0;//setovanje flega vozila
-                v.FizickoLice = p;//dodavanje vozilu referencu na vlasnika(FizickoLice)
 
                 s.Save(p);
 
@@ -362,7 +346,7 @@ namespace ParkingServis
 
         private void cmdDodavanjeJednokratneKupovine_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 ISession s = DataLayer.GetSession();
 
@@ -386,7 +370,7 @@ namespace ParkingServis
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
         }
 
         private void cmdUcitavanjePretplatnickeKupovine_Click(object sender, EventArgs e)
@@ -409,7 +393,7 @@ namespace ParkingServis
 
         private void cmdDodavanjePretplatnickeKupovine_Click(object sender, EventArgs e)
         {
-            /*try
+            try
             {
                 ISession s = DataLayer.GetSession();
 
@@ -436,7 +420,37 @@ namespace ParkingServis
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
+        }
+
+        private void cmdDodavanjeVozila_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                FizickoLice fl = s.Load<FizickoLice>(4);
+
+                Vozilo v = new Vozilo()
+                {
+                    Registarcija = "BG203FL",
+                    Proizvodjac = "Fiat",
+                    Model = "Punto",
+                    BrSaobracajne = "3161",
+                    FizPravnoFleg = 0
+                };
+                v.FizickoLice = fl;
+
+                s.Save(v);
+
+                s.Flush();
+                s.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
