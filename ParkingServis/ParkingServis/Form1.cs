@@ -177,5 +177,49 @@ namespace ParkingServis
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmdUcitavanjeZakupa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Vozilo v = s.Load<Vozilo>(2);
+
+                foreach (var m in v.ZakupMesta)
+                {
+                    MessageBox.Show(m.Vreme.ToString());
+                }
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdDodavanjeZakupa_Click(object sender, EventArgs e)
+        {
+            ISession s = DataLayer.GetSession();
+
+            Vozilo v = s.Load<Vozilo>(3);
+            JavnoMesto jm = s.Load<JavnoMesto>(4);
+
+            Zakup z = new Zakup()
+            {
+                Vreme = DateTime.Now,
+                PeriodZakupa = 36,
+                UlJavnoFleg = true
+            };
+
+            z.JavnoMesto = jm;
+            z.Vozilo = v;
+
+            s.Save(z);
+            s.Flush();
+
+            s.Close();
+        }
     }
 }

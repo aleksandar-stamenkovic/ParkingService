@@ -17,5 +17,11 @@ namespace ParkingServis.Entiteti
 
         public virtual FizickoLice FizickoLice { get; set; }
         public virtual PravnoLice PravnoLice { get; set; }
+        public virtual IList<Zakup> ZakupMesta { get; set; }
+
+        public Vozilo()
+        {
+            ZakupMesta = new List<Zakup>();
+        }
     }
 }

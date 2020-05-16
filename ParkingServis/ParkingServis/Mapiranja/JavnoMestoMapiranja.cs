@@ -25,6 +25,8 @@ namespace ParkingServis.Mapiranja
             Map(x => x.Sprat, "SPRAT");
 
             References(x => x.PripadaParkingu).Column("ID_PARKINGA").LazyLoad();
+
+            HasMany(x => x.ZakupVozila).KeyColumn("ID_JAVNOG_MESTA").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

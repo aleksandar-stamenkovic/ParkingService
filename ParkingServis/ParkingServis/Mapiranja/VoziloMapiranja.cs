@@ -24,6 +24,8 @@ namespace ParkingServis.Mapiranja
 
             References(x => x.FizickoLice).Column("ID_FIZICKOG").LazyLoad();
             References(x => x.PravnoLice).Column("ID_PRAVNOG").LazyLoad();
+
+            HasMany(x => x.ZakupMesta).KeyColumn("ID_VOZILA").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

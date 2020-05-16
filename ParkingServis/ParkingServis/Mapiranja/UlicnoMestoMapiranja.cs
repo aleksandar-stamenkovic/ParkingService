@@ -22,6 +22,8 @@ namespace ParkingServis.Mapiranja
             Map(x => x.Zauzetost, "ZAUZETOST");
             Map(x => x.Zona, "ZONA");
             Map(x => x.NazivUlice, "NAZIV_ULICE");
+
+            HasMany(x => x.ZakupVozila).KeyColumn("ID_ULICNOG_MESTA").LazyLoad().Cascade.All().Inverse();
         }
     }
 }

@@ -35,6 +35,8 @@
             this.cmdUcitavanjeUlicnogMesta = new System.Windows.Forms.Button();
             this.cmdUcitavanjeVozila = new System.Windows.Forms.Button();
             this.cmdDodajJavnoMesto = new System.Windows.Forms.Button();
+            this.cmdUcitavanjeZakupa = new System.Windows.Forms.Button();
+            this.cmdDodavanjeZakupa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeParkinga
@@ -91,7 +93,7 @@
             // 
             // cmdUcitavanjeVozila
             // 
-            this.cmdUcitavanjeVozila.Location = new System.Drawing.Point(13, 155);
+            this.cmdUcitavanjeVozila.Location = new System.Drawing.Point(13, 131);
             this.cmdUcitavanjeVozila.Name = "cmdUcitavanjeVozila";
             this.cmdUcitavanjeVozila.Size = new System.Drawing.Size(132, 23);
             this.cmdUcitavanjeVozila.TabIndex = 4;
@@ -109,11 +111,33 @@
             this.cmdDodajJavnoMesto.UseVisualStyleBackColor = true;
             this.cmdDodajJavnoMesto.Click += new System.EventHandler(this.cmdDodajJavnoMesto_Click);
             // 
+            // cmdUcitavanjeZakupa
+            // 
+            this.cmdUcitavanjeZakupa.Location = new System.Drawing.Point(13, 160);
+            this.cmdUcitavanjeZakupa.Name = "cmdUcitavanjeZakupa";
+            this.cmdUcitavanjeZakupa.Size = new System.Drawing.Size(132, 23);
+            this.cmdUcitavanjeZakupa.TabIndex = 6;
+            this.cmdUcitavanjeZakupa.Text = "Ucitavanje zakupa";
+            this.cmdUcitavanjeZakupa.UseVisualStyleBackColor = true;
+            this.cmdUcitavanjeZakupa.Click += new System.EventHandler(this.cmdUcitavanjeZakupa_Click);
+            // 
+            // cmdDodavanjeZakupa
+            // 
+            this.cmdDodavanjeZakupa.Location = new System.Drawing.Point(13, 189);
+            this.cmdDodavanjeZakupa.Name = "cmdDodavanjeZakupa";
+            this.cmdDodavanjeZakupa.Size = new System.Drawing.Size(132, 23);
+            this.cmdDodavanjeZakupa.TabIndex = 7;
+            this.cmdDodavanjeZakupa.Text = "Dodavanje zakupa";
+            this.cmdDodavanjeZakupa.UseVisualStyleBackColor = true;
+            this.cmdDodavanjeZakupa.Click += new System.EventHandler(this.cmdDodavanjeZakupa_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 291);
+            this.ClientSize = new System.Drawing.Size(629, 363);
+            this.Controls.Add(this.cmdDodavanjeZakupa);
+            this.Controls.Add(this.cmdUcitavanjeZakupa);
             this.Controls.Add(this.cmdDodajJavnoMesto);
             this.Controls.Add(this.cmdUcitavanjeVozila);
             this.Controls.Add(this.cmdUcitavanjeUlicnogMesta);
@@ -136,6 +160,8 @@
         private System.Windows.Forms.Button cmdUcitavanjeUlicnogMesta;
         private System.Windows.Forms.Button cmdUcitavanjeVozila;
         private System.Windows.Forms.Button cmdDodajJavnoMesto;
+        private System.Windows.Forms.Button cmdUcitavanjeZakupa;
+        private System.Windows.Forms.Button cmdDodavanjeZakupa;
     }
 }
 

@@ -16,5 +16,10 @@ namespace ParkingServis.Entiteti
         public virtual UlicnoMesto UlicnoMesto { get; set; }
         public virtual JavnoMesto JavnoMesto { get; set; }
         public virtual Vozilo Vozilo { get; set; }
+
+        public Zakup()
+        {
+
+        }
     }
 }

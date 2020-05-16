@@ -12,10 +12,11 @@ namespace ParkingServis.Entiteti
         public virtual string Zauzetost { get; set; }
         public virtual int Zona { get; set; }
         public virtual string NazivUlice { get; set; }
+        public virtual IList<Zakup> ZakupVozila { get; set; }
 
         public UlicnoMesto()
         {
-
+            ZakupVozila = new List<Zakup>();
         }
     }
 }

@@ -15,5 +15,11 @@ namespace ParkingServis.Entiteti
         public virtual int Sprat { get; set; }
 
         public virtual Parking PripadaParkingu { get; set; }
+        public virtual IList<Zakup> ZakupVozila { get; set; }
+
+        public JavnoMesto()
+        {
+            ZakupVozila = new List<Zakup>();
+        }
     }
 }
