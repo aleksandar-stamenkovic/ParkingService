@@ -245,5 +245,205 @@ namespace ParkingServis
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmdUcitavanjeFizickogLica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                FizickoLice p = s.Load<FizickoLice>(3);
+
+                MessageBox.Show(p.Jmbg + " " + p.Ime + " " + p.ImeRoditelja);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdDodavanjePravnogLica_Click(object sender, EventArgs e)
+        {
+            /*try nije testirana jer imamo problem sa vozilom najpre treba da dodamo neko vozilo koje nije zauzeto pa onda da pustimo dodavanje
+            {
+                ISession s = DataLayer.GetSession();
+
+
+                Vozilo v = new Vozilo();
+
+                v = s.Load<Vozilo>(9);//ucitavanje nekog vozila
+
+                PravnoLice p = new PravnoLice()
+                {
+                    Pib = "1222544",
+                    Naziv = "KomTrade",
+                    Adresa = "Nikole Pasica Beograd",
+                    BrTelefona = "0800250255",
+                    ImeOvlascenog = "Jovan Stamenkovic"
+
+                };
+
+                p.Vozila.Add(v);//dodavanje vozila u listu vozila FizickogLica
+
+                v.FizPravnoFleg = 1;//setovanje flega vozila
+                v.PravnoLice = p;//dodavanje vozilu referencu na vlasnika(PravnoLice)
+
+                s.Save(p);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+        }
+
+        private void cmdDodavanjeFizickogLica_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Vozilo v = new Vozilo();
+
+                v = s.Load<Vozilo>(10);//ucitavanje nekog vozila
+
+                FizickoLice p = new FizickoLice()
+                {
+                    Jmbg = 1112223334445,
+                    Ime = "Petar",
+                    ImeRoditelja = "Milovan",
+                    Prezime = "Petrovic",
+                    BrTelefona = "0655355454",
+                    Adresa = "Stanoja Glavasa Beograd",
+                    BrLicne = "222331257",
+                    MestoIzdavanja = "Beograd",
+                    BrVozacke = "225646654",
+                    ZonaBoravka = "2"
+
+                };
+
+                p.Vozila.Add(v);//dodavanje vozila u listu vozila FizickogLica
+
+                v.FizPravnoFleg = 0;//setovanje flega vozila
+                v.FizickoLice = p;//dodavanje vozilu referencu na vlasnika(FizickoLice)
+
+                s.Save(p);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdUcitavanjeJednokratneKupovine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                JednokratnaKupovina p = s.Load<JednokratnaKupovina>(2);
+
+                MessageBox.Show(p.DatumProdaje + " " + p.Iskoriscenost);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdDodavanjeJednokratneKupovine_Click(object sender, EventArgs e)
+        {
+            /*try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Vozilo p = new Vozilo();
+
+                p = s.Load<Vozilo>(8);
+
+                JednokratnaKupovina jm = new JednokratnaKupovina()
+                {
+                    DatumProdaje = DateTime.Now,
+                    Iskoriscenost = true
+                };
+
+                jm.PripadaVozilu = p;
+
+                s.Save(jm);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+        }
+
+        private void cmdUcitavanjePretplatnickeKupovine_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                PretplatnickaKupovina p = s.Load<PretplatnickaKupovina>(2);
+
+                MessageBox.Show(p.Zona + " " + p.DatumProdaje + " " + p.PeriodVazenja + " " + p.Iskoriscenost);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdDodavanjePretplatnickeKupovine_Click(object sender, EventArgs e)
+        {
+            /*try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Vozilo p = new Vozilo();
+
+                p = s.Load<Vozilo>(4);
+
+                PretplatnickaKupovina jm = new PretplatnickaKupovina()
+                {
+                    Zona = 3,
+                    DatumProdaje = DateTime.Now,
+                    PeriodVazenja = 25,
+                    Iskoriscenost = true
+
+                };
+
+                jm.PripadaVozilu = p;
+
+                s.Save(jm);
+
+                s.Flush();
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
+        }
     }
 }
+
+
+/*Ucitavanja za pravno fizicko jednokratnu i pretplatnicku rade 
+ * a dodavanja nisam stigo da testiram jer kod osoba imamo problem 
+ * treba nam prvo vozilo koje nema vlasnika pa da mu dodelimo 
+ * vlasnika kad dodajemo fizicko ili pravno dodavanje jednokratne i pretplatnicke kupovine bi trebalo da radi
+*/
