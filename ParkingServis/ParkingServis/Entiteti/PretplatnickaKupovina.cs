@@ -14,6 +14,11 @@ namespace ParkingServis.Entiteti
         public virtual int PeriodVazenja { get; set; }
         public virtual bool Iskoriscenost { get; set; }
 
-        //public virtual Vozilo PripadaVozilu { get; set; }
+        public virtual Vozilo PripadaVozilu { get; set; }
+
+        public PretplatnickaKupovina()
+        {
+
+        }
     }
 }

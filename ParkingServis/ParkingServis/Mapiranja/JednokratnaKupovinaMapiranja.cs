@@ -22,7 +22,7 @@ namespace ParkingServis.Mapiranja
             Map(x => x.DatumProdaje, "DATUM_PRODAJE");
             Map(x => x.Iskoriscenost, "ISKORISCENOST");
 
-            //References(x => x.PripadaVozilu).Column("ID_VOZILA").LazyLoad();
+            References(x => x.PripadaVozilu).Column("ID_VOZILA").LazyLoad();
         }
     }
 }

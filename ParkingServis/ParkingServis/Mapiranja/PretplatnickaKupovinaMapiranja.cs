@@ -24,7 +24,7 @@ namespace ParkingServis.Mapiranja
             Map(x => x.PeriodVazenja, "PERIOD_VAZENJA");
             Map(x => x.Iskoriscenost, "ISKORISCENOST");
 
-            //References(x => x.PripadaVozilu).Column("ID_VOZILA").LazyLoad();
+            References(x => x.PripadaVozilu).Column("ID_VOZILA").LazyLoad();
         }
     }
 }
