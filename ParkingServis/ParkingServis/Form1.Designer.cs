@@ -59,6 +59,10 @@
             this.cmdMultipleResult = new System.Windows.Forms.Button();
             this.cmdPaging = new System.Windows.Forms.Button();
             this.cmdCriteria = new System.Windows.Forms.Button();
+            this.cmdSQLNative = new System.Windows.Forms.Button();
+            this.cmdFluentAPI = new System.Windows.Forms.Button();
+            this.cmdLINQ = new System.Windows.Forms.Button();
+            this.cmdLINQ1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeParkinga
@@ -380,11 +384,55 @@
             this.cmdCriteria.UseVisualStyleBackColor = true;
             this.cmdCriteria.Click += new System.EventHandler(this.cmdCriteria_Click);
             // 
+            // cmdSQLNative
+            // 
+            this.cmdSQLNative.Location = new System.Drawing.Point(464, 337);
+            this.cmdSQLNative.Name = "cmdSQLNative";
+            this.cmdSQLNative.Size = new System.Drawing.Size(183, 23);
+            this.cmdSQLNative.TabIndex = 30;
+            this.cmdSQLNative.Text = "SQL Native";
+            this.cmdSQLNative.UseVisualStyleBackColor = true;
+            this.cmdSQLNative.Click += new System.EventHandler(this.cmdSQLNative_Click);
+            // 
+            // cmdFluentAPI
+            // 
+            this.cmdFluentAPI.Location = new System.Drawing.Point(464, 367);
+            this.cmdFluentAPI.Name = "cmdFluentAPI";
+            this.cmdFluentAPI.Size = new System.Drawing.Size(183, 23);
+            this.cmdFluentAPI.TabIndex = 31;
+            this.cmdFluentAPI.Text = "Fluent API";
+            this.cmdFluentAPI.UseVisualStyleBackColor = true;
+            this.cmdFluentAPI.Click += new System.EventHandler(this.cmdFluentAPI_Click);
+            // 
+            // cmdLINQ
+            // 
+            this.cmdLINQ.Location = new System.Drawing.Point(464, 397);
+            this.cmdLINQ.Name = "cmdLINQ";
+            this.cmdLINQ.Size = new System.Drawing.Size(183, 23);
+            this.cmdLINQ.TabIndex = 32;
+            this.cmdLINQ.Text = "LINQ";
+            this.cmdLINQ.UseVisualStyleBackColor = true;
+            this.cmdLINQ.Click += new System.EventHandler(this.cmdLINQ_Click);
+            // 
+            // cmdLINQ1
+            // 
+            this.cmdLINQ1.Location = new System.Drawing.Point(464, 427);
+            this.cmdLINQ1.Name = "cmdLINQ1";
+            this.cmdLINQ1.Size = new System.Drawing.Size(183, 23);
+            this.cmdLINQ1.TabIndex = 33;
+            this.cmdLINQ1.Text = "LINQ1";
+            this.cmdLINQ1.UseVisualStyleBackColor = true;
+            this.cmdLINQ1.Click += new System.EventHandler(this.cmdLINQ1_Click);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 459);
+            this.ClientSize = new System.Drawing.Size(662, 465);
+            this.Controls.Add(this.cmdLINQ1);
+            this.Controls.Add(this.cmdLINQ);
+            this.Controls.Add(this.cmdFluentAPI);
+            this.Controls.Add(this.cmdSQLNative);
             this.Controls.Add(this.cmdCriteria);
             this.Controls.Add(this.cmdPaging);
             this.Controls.Add(this.cmdMultipleResult);
@@ -455,6 +503,10 @@
         private System.Windows.Forms.Button cmdMultipleResult;
         private System.Windows.Forms.Button cmdPaging;
         private System.Windows.Forms.Button cmdCriteria;
+        private System.Windows.Forms.Button cmdSQLNative;
+        private System.Windows.Forms.Button cmdFluentAPI;
+        private System.Windows.Forms.Button cmdLINQ;
+        private System.Windows.Forms.Button cmdLINQ1;
     }
 }
 

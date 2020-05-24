@@ -775,5 +775,113 @@ namespace ParkingServis
                 MessageBox.Show(ec.Message);
             }
         }
+
+        private void cmdSQLNative_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                ISQLQuery q = s.CreateSQLQuery("SELECT P.* FROM PARKING P");
+                q.AddEntity(typeof(Parking));
+
+
+                IList<Parking> parkinzi = q.List<Parking>();
+
+                string prikaz = "";
+                foreach (var p in parkinzi)
+                {
+                    prikaz += $"{p.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdFluentAPI_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IList<Parking> parkinzi = s.QueryOver<Parking>()
+                                           .Where(x => x.Zona > 2)
+                                           .List<Parking>();
+
+                string prikaz = "";
+                foreach (var p in parkinzi)
+                {
+                    prikaz += $"{p.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdLINQ_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IList<Parking> parkinzi = (from p in s.Query<Parking>()
+                                           where (p.Zona >= 1 && p.PodNadTip == "Pod")
+                                           select p).ToList<Parking>();
+
+                string prikaz = "";
+                foreach (var p in parkinzi)
+                {
+                    prikaz += $"{p.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdLINQ1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IEnumerable<Parking> parkinzi = from p in s.Query<Parking>()
+                                                 where (p.Montazna == true || p.PodNadTip == "Nad")
+                                                 orderby p.Zona
+                                                 select p;
+
+                string prikaz = "";
+                foreach (var p in parkinzi)
+                {
+                    prikaz += $"{p.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
     }
 }
