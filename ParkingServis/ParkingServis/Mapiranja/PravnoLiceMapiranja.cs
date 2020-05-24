@@ -8,7 +8,7 @@ using ParkingServis.Entiteti;
 
 namespace ParkingServis.Mapiranja
 {
-    public class PravnoLiceMapiranja : ClassMap<PravnoLice>
+    public class PravnoLiceMapiranja : SubclassMap<PravnoLice>
     {
         public PravnoLiceMapiranja()
         {
@@ -16,13 +16,13 @@ namespace ParkingServis.Mapiranja
             Table("PRAVNO_LICE");
 
             // Mapiranje primarnog kljuca
-            Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
+            //Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
 
             //Mapiranje svojstava
             Map(x => x.Pib, "PIB");
             Map(x => x.Naziv, "NAZIV");
-            Map(x => x.Adresa, "ADRESA");
-            Map(x => x.BrTelefona, "BR_TELEFONA");
+            //Map(x => x.Adresa, "ADRESA");
+            //Map(x => x.BrTelefona, "BR_TELEFONA");
             Map(x => x.ImeOvlascenog, "IME_OVLASCENOG");
 
             HasMany(x => x.Vozila).KeyColumn("ID_PRAVNOG").LazyLoad().Cascade.All().Inverse();

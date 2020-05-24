@@ -74,6 +74,8 @@
     <Compile Include="Entiteti\FizickoLice.cs" />
     <Compile Include="Entiteti\JavnoMesto.cs" />
     <Compile Include="Entiteti\JednokratnaKupovina.cs" />
+    <Compile Include="Entiteti\Kupovina.cs" />
+    <Compile Include="Entiteti\Lice.cs" />
     <Compile Include="Entiteti\Parking.cs" />
     <Compile Include="Entiteti\PravnoLice.cs" />
     <Compile Include="Entiteti\PretplatnickaKupovina.cs" />
@@ -89,6 +91,8 @@
     <Compile Include="Mapiranja\FizickoLiceMapiranje.cs" />
     <Compile Include="Mapiranja\JavnoMestoMapiranja.cs" />
     <Compile Include="Mapiranja\JednokratnaKupovinaMapiranja.cs" />
+    <Compile Include="Mapiranja\KupovinaMapiranja.cs" />
+    <Compile Include="Mapiranja\LiceMapiranja.cs" />
     <Compile Include="Mapiranja\ParkingMapiranja.cs" />
     <Compile Include="Mapiranja\PravnoLiceMapiranja.cs" />
     <Compile Include="Mapiranja\PretplatnickaKupovinaMapiranja.cs" />

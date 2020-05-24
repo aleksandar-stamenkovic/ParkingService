@@ -12,6 +12,7 @@ namespace ParkingServis.Mapiranja
     {
         public VoziloMapiranja()
         {
+            // Table Per Hierarchy Inheritance
             Table("VOZILO");
 
             DiscriminateSubClassesOnColumn("FIZ_PRAVNO_FLEG");

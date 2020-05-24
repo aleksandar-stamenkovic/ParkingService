@@ -8,7 +8,7 @@ using ParkingServis.Entiteti;
 
 namespace ParkingServis.Mapiranja
 {
-    public class JednokratnaKupovinaMapiranja : ClassMap<JednokratnaKupovina>
+    public class JednokratnaKupovinaMapiranja : SubclassMap<JednokratnaKupovina>
     {
         public JednokratnaKupovinaMapiranja()
         {
@@ -16,13 +16,13 @@ namespace ParkingServis.Mapiranja
             Table("JEDNOKRATNA_KUPOVINA");
 
             // Mapiranje primarnog kljuca
-            Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
+            //Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
 
             // Mapiranje svojstava
-            Map(x => x.DatumProdaje, "DATUM_PRODAJE");
-            Map(x => x.Iskoriscenost, "ISKORISCENOST");
+            //Map(x => x.DatumProdaje, "DATUM_PRODAJE");
+            //Map(x => x.Iskoriscenost, "ISKORISCENOST");
 
-            References(x => x.PripadaVozilu).Column("ID_VOZILA").LazyLoad();
+            //References(x => x.PripadaVozilu).Column("ID_VOZILA").LazyLoad();
         }
     }
 }

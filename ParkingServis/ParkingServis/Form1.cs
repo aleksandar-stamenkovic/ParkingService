@@ -272,7 +272,7 @@ namespace ParkingServis
 
                 PravnoLice p = new PravnoLice()
                 {
-                    Pib = "1222544",
+                    Pib = "1222594",
                     Naziv = "KomTrade",
                     Adresa = "Nikole Pasica Beograd",
                     BrTelefona = "0800250255",
@@ -301,13 +301,13 @@ namespace ParkingServis
 
                 FizickoLice p = new FizickoLice()
                 {
-                    Jmbg = 1112223334446,
+                    Jmbg = 1112223334440,
                     Ime = "Petar",
                     ImeRoditelja = "Milovan",
                     Prezime = "Petrovic",
                     BrTelefona = "0655355454",
                     Adresa = "Stanoja Glavasa Beograd",
-                    BrLicne = "222331257",
+                    BrLicne = "222331357",
                     MestoIzdavanja = "Beograd",
                     BrVozacke = "225646654",
                     ZonaBoravka = "2"

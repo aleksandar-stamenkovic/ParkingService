@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace ParkingServis.Entiteti
 {
-    public class PravnoLice
+    public class PravnoLice : Lice
     {
-        public virtual int Id { get; set; }
+        //public virtual int Id { get; set; }
         public virtual string Pib { get; set; }
         public virtual string Naziv { get; set; }
-        public virtual string Adresa { get; set; }
-        public virtual string BrTelefona { get; set; }
+        //public virtual string Adresa { get; set; }
+        //public virtual string BrTelefona { get; set; }
         public virtual string ImeOvlascenog { get; set; }
 
-        public virtual IList<Vozilo> Vozila { get; set; }
+        //public virtual IList<Vozilo> Vozila { get; set; }
 
         public PravnoLice()
         {

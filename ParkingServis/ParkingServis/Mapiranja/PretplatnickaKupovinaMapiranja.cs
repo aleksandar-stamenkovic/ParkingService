@@ -8,7 +8,7 @@ using ParkingServis.Entiteti;
 
 namespace ParkingServis.Mapiranja
 {
-    public class PretplatnickaKupovinaMapiranja : ClassMap<PretplatnickaKupovina>
+    public class PretplatnickaKupovinaMapiranja : SubclassMap<PretplatnickaKupovina>
     {
         public PretplatnickaKupovinaMapiranja()
         {
@@ -16,15 +16,15 @@ namespace ParkingServis.Mapiranja
             Table("PRETPLATNICKA_KUPOVINA");
 
             // Mapiranje primarnog kljuca
-            Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
+            //Id(x => x.Id, "ID").GeneratedBy.TriggerIdentity();
 
             // Mapiranje svojstava
             Map(x => x.Zona, "ZONA");
-            Map(x => x.DatumProdaje, "DATUM_PRODAJE");
+            //Map(x => x.DatumProdaje, "DATUM_PRODAJE");
             Map(x => x.PeriodVazenja, "PERIOD_VAZENJA");
-            Map(x => x.Iskoriscenost, "ISKORISCENOST");
+            //Map(x => x.Iskoriscenost, "ISKORISCENOST");
 
-            References(x => x.PripadaVozilu).Column("ID_VOZILA").LazyLoad();
+            //References(x => x.PripadaVozilu).Column("ID_VOZILA").LazyLoad();
         }
     }
 }
