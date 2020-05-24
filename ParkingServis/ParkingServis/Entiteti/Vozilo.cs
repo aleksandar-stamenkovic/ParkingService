@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParkingServis.Entiteti
 {
-    public class Vozilo
+    public abstract class Vozilo
     {
         public virtual int Id { get; set; }
         public virtual string Registarcija { get; set; }
@@ -23,5 +23,15 @@ namespace ParkingServis.Entiteti
         {
             ZakupMesta = new List<Zakup>();
         }
+    }
+
+    public class VoziloPravnog : Vozilo
+    {
+
+    }
+
+    public class VoziloFizickog : Vozilo
+    {
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ParkingServis
 {
-    partial class Form1
+    partial class Form
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             this.cmdVezaManyToOne = new System.Windows.Forms.Button();
             this.cmdUcitavanjePravnogLica = new System.Windows.Forms.Button();
             this.cmdUcitavanjeUlicnogMesta = new System.Windows.Forms.Button();
-            this.cmdUcitavanjeVozila = new System.Windows.Forms.Button();
+            this.cmdUcitavanjeVozilaFizickog = new System.Windows.Forms.Button();
             this.cmdDodajJavnoMesto = new System.Windows.Forms.Button();
             this.cmdUcitavanjeZakupa = new System.Windows.Forms.Button();
             this.cmdDodavanjeZakupa = new System.Windows.Forms.Button();
@@ -45,7 +45,20 @@
             this.cmdDodavanjeJednokratneKupovine = new System.Windows.Forms.Button();
             this.cmdUcitavanjePretplatnickeKupovine = new System.Windows.Forms.Button();
             this.cmdDodavanjePretplatnickeKupovine = new System.Windows.Forms.Button();
-            this.cmdDodavanjeVozila = new System.Windows.Forms.Button();
+            this.cmdDodavanjeVozilaFizickog = new System.Windows.Forms.Button();
+            this.cmdUcitavanjeVozilaPravnog = new System.Windows.Forms.Button();
+            this.cmdDodavanjeVozilaPravnog = new System.Windows.Forms.Button();
+            this.cmdListaFizickihLica = new System.Windows.Forms.Button();
+            this.cmdCreateQuery = new System.Windows.Forms.Button();
+            this.cmdCreateQuery1 = new System.Windows.Forms.Button();
+            this.cmdUpitSaParametrima = new System.Windows.Forms.Button();
+            this.cmdUpitSaParametrima1 = new System.Windows.Forms.Button();
+            this.cmdEnumerable = new System.Windows.Forms.Button();
+            this.cmdScalar = new System.Windows.Forms.Button();
+            this.cmdUniqueResult = new System.Windows.Forms.Button();
+            this.cmdMultipleResult = new System.Windows.Forms.Button();
+            this.cmdPaging = new System.Windows.Forms.Button();
+            this.cmdCriteria = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmdUcitavanjeParkinga
@@ -81,7 +94,7 @@
             // cmdUcitavanjePravnogLica
             // 
             this.cmdUcitavanjePravnogLica.Location = new System.Drawing.Point(237, 12);
-            this.cmdUcitavanjePravnogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdUcitavanjePravnogLica.Margin = new System.Windows.Forms.Padding(2);
             this.cmdUcitavanjePravnogLica.Name = "cmdUcitavanjePravnogLica";
             this.cmdUcitavanjePravnogLica.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjePravnogLica.TabIndex = 2;
@@ -92,7 +105,7 @@
             // cmdUcitavanjeUlicnogMesta
             // 
             this.cmdUcitavanjeUlicnogMesta.Location = new System.Drawing.Point(12, 294);
-            this.cmdUcitavanjeUlicnogMesta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdUcitavanjeUlicnogMesta.Margin = new System.Windows.Forms.Padding(2);
             this.cmdUcitavanjeUlicnogMesta.Name = "cmdUcitavanjeUlicnogMesta";
             this.cmdUcitavanjeUlicnogMesta.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeUlicnogMesta.TabIndex = 3;
@@ -100,15 +113,15 @@
             this.cmdUcitavanjeUlicnogMesta.UseVisualStyleBackColor = true;
             this.cmdUcitavanjeUlicnogMesta.Click += new System.EventHandler(this.cmdUcitavanjeUlicnogMesta_Click);
             // 
-            // cmdUcitavanjeVozila
+            // cmdUcitavanjeVozilaFizickog
             // 
-            this.cmdUcitavanjeVozila.Location = new System.Drawing.Point(12, 152);
-            this.cmdUcitavanjeVozila.Name = "cmdUcitavanjeVozila";
-            this.cmdUcitavanjeVozila.Size = new System.Drawing.Size(183, 23);
-            this.cmdUcitavanjeVozila.TabIndex = 4;
-            this.cmdUcitavanjeVozila.Text = "Ucitavanje vozila";
-            this.cmdUcitavanjeVozila.UseVisualStyleBackColor = true;
-            this.cmdUcitavanjeVozila.Click += new System.EventHandler(this.cmdUcitavanjeVozila_Click);
+            this.cmdUcitavanjeVozilaFizickog.Location = new System.Drawing.Point(12, 152);
+            this.cmdUcitavanjeVozilaFizickog.Name = "cmdUcitavanjeVozilaFizickog";
+            this.cmdUcitavanjeVozilaFizickog.Size = new System.Drawing.Size(183, 23);
+            this.cmdUcitavanjeVozilaFizickog.TabIndex = 4;
+            this.cmdUcitavanjeVozilaFizickog.Text = "Ucitavanje vozila fizickog";
+            this.cmdUcitavanjeVozilaFizickog.UseVisualStyleBackColor = true;
+            this.cmdUcitavanjeVozilaFizickog.Click += new System.EventHandler(this.cmdUcitavanjeVozilaFizickog_Click);
             // 
             // cmdDodajJavnoMesto
             // 
@@ -122,7 +135,7 @@
             // 
             // cmdUcitavanjeZakupa
             // 
-            this.cmdUcitavanjeZakupa.Location = new System.Drawing.Point(12, 224);
+            this.cmdUcitavanjeZakupa.Location = new System.Drawing.Point(237, 294);
             this.cmdUcitavanjeZakupa.Name = "cmdUcitavanjeZakupa";
             this.cmdUcitavanjeZakupa.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeZakupa.TabIndex = 6;
@@ -132,7 +145,7 @@
             // 
             // cmdDodavanjeZakupa
             // 
-            this.cmdDodavanjeZakupa.Location = new System.Drawing.Point(12, 251);
+            this.cmdDodavanjeZakupa.Location = new System.Drawing.Point(237, 321);
             this.cmdDodavanjeZakupa.Name = "cmdDodavanjeZakupa";
             this.cmdDodavanjeZakupa.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjeZakupa.TabIndex = 7;
@@ -153,7 +166,7 @@
             // cmdUcitavanjeFizickogLica
             // 
             this.cmdUcitavanjeFizickogLica.Location = new System.Drawing.Point(237, 80);
-            this.cmdUcitavanjeFizickogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdUcitavanjeFizickogLica.Margin = new System.Windows.Forms.Padding(2);
             this.cmdUcitavanjeFizickogLica.Name = "cmdUcitavanjeFizickogLica";
             this.cmdUcitavanjeFizickogLica.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeFizickogLica.TabIndex = 9;
@@ -164,7 +177,7 @@
             // cmdDodavanjePravnogLica
             // 
             this.cmdDodavanjePravnogLica.Location = new System.Drawing.Point(237, 39);
-            this.cmdDodavanjePravnogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdDodavanjePravnogLica.Margin = new System.Windows.Forms.Padding(2);
             this.cmdDodavanjePravnogLica.Name = "cmdDodavanjePravnogLica";
             this.cmdDodavanjePravnogLica.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjePravnogLica.TabIndex = 10;
@@ -175,7 +188,7 @@
             // cmdDodavanjeFizickogLica
             // 
             this.cmdDodavanjeFizickogLica.Location = new System.Drawing.Point(237, 107);
-            this.cmdDodavanjeFizickogLica.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdDodavanjeFizickogLica.Margin = new System.Windows.Forms.Padding(2);
             this.cmdDodavanjeFizickogLica.Name = "cmdDodavanjeFizickogLica";
             this.cmdDodavanjeFizickogLica.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjeFizickogLica.TabIndex = 11;
@@ -186,7 +199,7 @@
             // cmdUcitavanjeJednokratneKupovine
             // 
             this.cmdUcitavanjeJednokratneKupovine.Location = new System.Drawing.Point(237, 152);
-            this.cmdUcitavanjeJednokratneKupovine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdUcitavanjeJednokratneKupovine.Margin = new System.Windows.Forms.Padding(2);
             this.cmdUcitavanjeJednokratneKupovine.Name = "cmdUcitavanjeJednokratneKupovine";
             this.cmdUcitavanjeJednokratneKupovine.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjeJednokratneKupovine.TabIndex = 12;
@@ -197,7 +210,7 @@
             // cmdDodavanjeJednokratneKupovine
             // 
             this.cmdDodavanjeJednokratneKupovine.Location = new System.Drawing.Point(237, 179);
-            this.cmdDodavanjeJednokratneKupovine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdDodavanjeJednokratneKupovine.Margin = new System.Windows.Forms.Padding(2);
             this.cmdDodavanjeJednokratneKupovine.Name = "cmdDodavanjeJednokratneKupovine";
             this.cmdDodavanjeJednokratneKupovine.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjeJednokratneKupovine.TabIndex = 13;
@@ -208,7 +221,7 @@
             // cmdUcitavanjePretplatnickeKupovine
             // 
             this.cmdUcitavanjePretplatnickeKupovine.Location = new System.Drawing.Point(237, 224);
-            this.cmdUcitavanjePretplatnickeKupovine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdUcitavanjePretplatnickeKupovine.Margin = new System.Windows.Forms.Padding(2);
             this.cmdUcitavanjePretplatnickeKupovine.Name = "cmdUcitavanjePretplatnickeKupovine";
             this.cmdUcitavanjePretplatnickeKupovine.Size = new System.Drawing.Size(183, 23);
             this.cmdUcitavanjePretplatnickeKupovine.TabIndex = 14;
@@ -219,7 +232,7 @@
             // cmdDodavanjePretplatnickeKupovine
             // 
             this.cmdDodavanjePretplatnickeKupovine.Location = new System.Drawing.Point(237, 251);
-            this.cmdDodavanjePretplatnickeKupovine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmdDodavanjePretplatnickeKupovine.Margin = new System.Windows.Forms.Padding(2);
             this.cmdDodavanjePretplatnickeKupovine.Name = "cmdDodavanjePretplatnickeKupovine";
             this.cmdDodavanjePretplatnickeKupovine.Size = new System.Drawing.Size(183, 23);
             this.cmdDodavanjePretplatnickeKupovine.TabIndex = 15;
@@ -227,22 +240,165 @@
             this.cmdDodavanjePretplatnickeKupovine.UseVisualStyleBackColor = true;
             this.cmdDodavanjePretplatnickeKupovine.Click += new System.EventHandler(this.cmdDodavanjePretplatnickeKupovine_Click);
             // 
-            // cmdDodavanjeVozila
+            // cmdDodavanjeVozilaFizickog
             // 
-            this.cmdDodavanjeVozila.Location = new System.Drawing.Point(12, 182);
-            this.cmdDodavanjeVozila.Name = "cmdDodavanjeVozila";
-            this.cmdDodavanjeVozila.Size = new System.Drawing.Size(183, 23);
-            this.cmdDodavanjeVozila.TabIndex = 16;
-            this.cmdDodavanjeVozila.Text = "Dodavanje vozila";
-            this.cmdDodavanjeVozila.UseVisualStyleBackColor = true;
-            this.cmdDodavanjeVozila.Click += new System.EventHandler(this.cmdDodavanjeVozila_Click);
+            this.cmdDodavanjeVozilaFizickog.Location = new System.Drawing.Point(12, 182);
+            this.cmdDodavanjeVozilaFizickog.Name = "cmdDodavanjeVozilaFizickog";
+            this.cmdDodavanjeVozilaFizickog.Size = new System.Drawing.Size(183, 23);
+            this.cmdDodavanjeVozilaFizickog.TabIndex = 16;
+            this.cmdDodavanjeVozilaFizickog.Text = "Dodavanje vozila fizickog";
+            this.cmdDodavanjeVozilaFizickog.UseVisualStyleBackColor = true;
+            this.cmdDodavanjeVozilaFizickog.Click += new System.EventHandler(this.cmdDodavanjeVozilaFizickog_Click);
             // 
-            // Form1
+            // cmdUcitavanjeVozilaPravnog
+            // 
+            this.cmdUcitavanjeVozilaPravnog.Location = new System.Drawing.Point(13, 224);
+            this.cmdUcitavanjeVozilaPravnog.Name = "cmdUcitavanjeVozilaPravnog";
+            this.cmdUcitavanjeVozilaPravnog.Size = new System.Drawing.Size(182, 23);
+            this.cmdUcitavanjeVozilaPravnog.TabIndex = 17;
+            this.cmdUcitavanjeVozilaPravnog.Text = "Ucitavanje vozila pravnog";
+            this.cmdUcitavanjeVozilaPravnog.UseVisualStyleBackColor = true;
+            this.cmdUcitavanjeVozilaPravnog.Click += new System.EventHandler(this.cmdUcitavanjeVozilaPravnog_Click);
+            // 
+            // cmdDodavanjeVozilaPravnog
+            // 
+            this.cmdDodavanjeVozilaPravnog.Location = new System.Drawing.Point(13, 254);
+            this.cmdDodavanjeVozilaPravnog.Name = "cmdDodavanjeVozilaPravnog";
+            this.cmdDodavanjeVozilaPravnog.Size = new System.Drawing.Size(182, 23);
+            this.cmdDodavanjeVozilaPravnog.TabIndex = 18;
+            this.cmdDodavanjeVozilaPravnog.Text = "Dodavanje vozila pravnog";
+            this.cmdDodavanjeVozilaPravnog.UseVisualStyleBackColor = true;
+            this.cmdDodavanjeVozilaPravnog.Click += new System.EventHandler(this.cmdDodavanjeVozilaPravnog_Click);
+            // 
+            // cmdListaFizickihLica
+            // 
+            this.cmdListaFizickihLica.Location = new System.Drawing.Point(464, 12);
+            this.cmdListaFizickihLica.Name = "cmdListaFizickihLica";
+            this.cmdListaFizickihLica.Size = new System.Drawing.Size(183, 23);
+            this.cmdListaFizickihLica.TabIndex = 19;
+            this.cmdListaFizickihLica.Text = "QueryOver";
+            this.cmdListaFizickihLica.UseVisualStyleBackColor = true;
+            this.cmdListaFizickihLica.Click += new System.EventHandler(this.cmdQueryOver_Click);
+            // 
+            // cmdCreateQuery
+            // 
+            this.cmdCreateQuery.Location = new System.Drawing.Point(464, 38);
+            this.cmdCreateQuery.Name = "cmdCreateQuery";
+            this.cmdCreateQuery.Size = new System.Drawing.Size(183, 23);
+            this.cmdCreateQuery.TabIndex = 20;
+            this.cmdCreateQuery.Text = "CreateQuery";
+            this.cmdCreateQuery.UseVisualStyleBackColor = true;
+            this.cmdCreateQuery.Click += new System.EventHandler(this.cmdCreateQuery_Click);
+            // 
+            // cmdCreateQuery1
+            // 
+            this.cmdCreateQuery1.Location = new System.Drawing.Point(464, 67);
+            this.cmdCreateQuery1.Name = "cmdCreateQuery1";
+            this.cmdCreateQuery1.Size = new System.Drawing.Size(183, 23);
+            this.cmdCreateQuery1.TabIndex = 21;
+            this.cmdCreateQuery1.Text = "CreateQuery1";
+            this.cmdCreateQuery1.UseVisualStyleBackColor = true;
+            this.cmdCreateQuery1.Click += new System.EventHandler(this.cmdCreateQuery1_Click);
+            // 
+            // cmdUpitSaParametrima
+            // 
+            this.cmdUpitSaParametrima.Location = new System.Drawing.Point(464, 97);
+            this.cmdUpitSaParametrima.Name = "cmdUpitSaParametrima";
+            this.cmdUpitSaParametrima.Size = new System.Drawing.Size(183, 23);
+            this.cmdUpitSaParametrima.TabIndex = 22;
+            this.cmdUpitSaParametrima.Text = "Upit sa parametrima";
+            this.cmdUpitSaParametrima.UseVisualStyleBackColor = true;
+            this.cmdUpitSaParametrima.Click += new System.EventHandler(this.cmdUpitSaParametrima_Click);
+            // 
+            // cmdUpitSaParametrima1
+            // 
+            this.cmdUpitSaParametrima1.Location = new System.Drawing.Point(464, 127);
+            this.cmdUpitSaParametrima1.Name = "cmdUpitSaParametrima1";
+            this.cmdUpitSaParametrima1.Size = new System.Drawing.Size(183, 23);
+            this.cmdUpitSaParametrima1.TabIndex = 23;
+            this.cmdUpitSaParametrima1.Text = "Upit sa parametrima1";
+            this.cmdUpitSaParametrima1.UseVisualStyleBackColor = true;
+            this.cmdUpitSaParametrima1.Click += new System.EventHandler(this.cmdUpitSaParametrima1_Click);
+            // 
+            // cmdEnumerable
+            // 
+            this.cmdEnumerable.Location = new System.Drawing.Point(464, 157);
+            this.cmdEnumerable.Name = "cmdEnumerable";
+            this.cmdEnumerable.Size = new System.Drawing.Size(183, 23);
+            this.cmdEnumerable.TabIndex = 24;
+            this.cmdEnumerable.Text = "Enumerable";
+            this.cmdEnumerable.UseVisualStyleBackColor = true;
+            this.cmdEnumerable.Click += new System.EventHandler(this.cmdEnumerable_Click);
+            // 
+            // cmdScalar
+            // 
+            this.cmdScalar.Location = new System.Drawing.Point(464, 187);
+            this.cmdScalar.Name = "cmdScalar";
+            this.cmdScalar.Size = new System.Drawing.Size(183, 23);
+            this.cmdScalar.TabIndex = 25;
+            this.cmdScalar.Text = "Scalar";
+            this.cmdScalar.UseVisualStyleBackColor = true;
+            this.cmdScalar.Click += new System.EventHandler(this.cmdScalar_Click);
+            // 
+            // cmdUniqueResult
+            // 
+            this.cmdUniqueResult.Location = new System.Drawing.Point(464, 217);
+            this.cmdUniqueResult.Name = "cmdUniqueResult";
+            this.cmdUniqueResult.Size = new System.Drawing.Size(183, 23);
+            this.cmdUniqueResult.TabIndex = 26;
+            this.cmdUniqueResult.Text = "Unique Result";
+            this.cmdUniqueResult.UseVisualStyleBackColor = true;
+            this.cmdUniqueResult.Click += new System.EventHandler(this.cmdUniqueResult_Click);
+            // 
+            // cmdMultipleResult
+            // 
+            this.cmdMultipleResult.Location = new System.Drawing.Point(464, 247);
+            this.cmdMultipleResult.Name = "cmdMultipleResult";
+            this.cmdMultipleResult.Size = new System.Drawing.Size(183, 23);
+            this.cmdMultipleResult.TabIndex = 27;
+            this.cmdMultipleResult.Text = "Multiple Result";
+            this.cmdMultipleResult.UseVisualStyleBackColor = true;
+            this.cmdMultipleResult.Click += new System.EventHandler(this.cmdMultipleResult_Click);
+            // 
+            // cmdPaging
+            // 
+            this.cmdPaging.Location = new System.Drawing.Point(464, 277);
+            this.cmdPaging.Name = "cmdPaging";
+            this.cmdPaging.Size = new System.Drawing.Size(183, 23);
+            this.cmdPaging.TabIndex = 28;
+            this.cmdPaging.Text = "Paging";
+            this.cmdPaging.UseVisualStyleBackColor = true;
+            this.cmdPaging.Click += new System.EventHandler(this.cmdPaging_Click);
+            // 
+            // cmdCriteria
+            // 
+            this.cmdCriteria.Location = new System.Drawing.Point(464, 307);
+            this.cmdCriteria.Name = "cmdCriteria";
+            this.cmdCriteria.Size = new System.Drawing.Size(183, 23);
+            this.cmdCriteria.TabIndex = 29;
+            this.cmdCriteria.Text = "Criteria";
+            this.cmdCriteria.UseVisualStyleBackColor = true;
+            this.cmdCriteria.Click += new System.EventHandler(this.cmdCriteria_Click);
+            // 
+            // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 459);
-            this.Controls.Add(this.cmdDodavanjeVozila);
+            this.ClientSize = new System.Drawing.Size(801, 459);
+            this.Controls.Add(this.cmdCriteria);
+            this.Controls.Add(this.cmdPaging);
+            this.Controls.Add(this.cmdMultipleResult);
+            this.Controls.Add(this.cmdUniqueResult);
+            this.Controls.Add(this.cmdScalar);
+            this.Controls.Add(this.cmdEnumerable);
+            this.Controls.Add(this.cmdUpitSaParametrima1);
+            this.Controls.Add(this.cmdUpitSaParametrima);
+            this.Controls.Add(this.cmdCreateQuery1);
+            this.Controls.Add(this.cmdCreateQuery);
+            this.Controls.Add(this.cmdListaFizickihLica);
+            this.Controls.Add(this.cmdDodavanjeVozilaPravnog);
+            this.Controls.Add(this.cmdUcitavanjeVozilaPravnog);
+            this.Controls.Add(this.cmdDodavanjeVozilaFizickog);
             this.Controls.Add(this.cmdDodavanjePretplatnickeKupovine);
             this.Controls.Add(this.cmdUcitavanjePretplatnickeKupovine);
             this.Controls.Add(this.cmdDodavanjeJednokratneKupovine);
@@ -254,14 +410,14 @@
             this.Controls.Add(this.cmdDodavanjeZakupa);
             this.Controls.Add(this.cmdUcitavanjeZakupa);
             this.Controls.Add(this.cmdDodajJavnoMesto);
-            this.Controls.Add(this.cmdUcitavanjeVozila);
+            this.Controls.Add(this.cmdUcitavanjeVozilaFizickog);
             this.Controls.Add(this.cmdUcitavanjeUlicnogMesta);
             this.Controls.Add(this.cmdUcitavanjePravnogLica);
             this.Controls.Add(this.cmdVezaManyToOne);
             this.Controls.Add(this.cmdDodavanjeParkinga);
             this.Controls.Add(this.cmdUcitavanjeParkinga);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Form";
+            this.Text = "Parking Servis";
             this.ResumeLayout(false);
 
         }
@@ -273,7 +429,7 @@
         private System.Windows.Forms.Button cmdVezaManyToOne;
         private System.Windows.Forms.Button cmdUcitavanjePravnogLica;
         private System.Windows.Forms.Button cmdUcitavanjeUlicnogMesta;
-        private System.Windows.Forms.Button cmdUcitavanjeVozila;
+        private System.Windows.Forms.Button cmdUcitavanjeVozilaFizickog;
         private System.Windows.Forms.Button cmdDodajJavnoMesto;
         private System.Windows.Forms.Button cmdUcitavanjeZakupa;
         private System.Windows.Forms.Button cmdDodavanjeZakupa;
@@ -285,7 +441,20 @@
         private System.Windows.Forms.Button cmdDodavanjeJednokratneKupovine;
         private System.Windows.Forms.Button cmdUcitavanjePretplatnickeKupovine;
         private System.Windows.Forms.Button cmdDodavanjePretplatnickeKupovine;
-        private System.Windows.Forms.Button cmdDodavanjeVozila;
+        private System.Windows.Forms.Button cmdDodavanjeVozilaFizickog;
+        private System.Windows.Forms.Button cmdUcitavanjeVozilaPravnog;
+        private System.Windows.Forms.Button cmdDodavanjeVozilaPravnog;
+        private System.Windows.Forms.Button cmdListaFizickihLica;
+        private System.Windows.Forms.Button cmdCreateQuery;
+        private System.Windows.Forms.Button cmdCreateQuery1;
+        private System.Windows.Forms.Button cmdUpitSaParametrima;
+        private System.Windows.Forms.Button cmdUpitSaParametrima1;
+        private System.Windows.Forms.Button cmdEnumerable;
+        private System.Windows.Forms.Button cmdScalar;
+        private System.Windows.Forms.Button cmdUniqueResult;
+        private System.Windows.Forms.Button cmdMultipleResult;
+        private System.Windows.Forms.Button cmdPaging;
+        private System.Windows.Forms.Button cmdCriteria;
     }
 }
 

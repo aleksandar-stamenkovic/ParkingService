@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using NHibernate;
+using NHibernate.Criterion;
 using ParkingServis.Entiteti;
 
 namespace ParkingServis
 {
-    public partial class Form1 : Form
+    public partial class Form : System.Windows.Forms.Form
     {
-        public Form1()
+        public Form()
         {
             InitializeComponent();
         }
@@ -125,7 +126,7 @@ namespace ParkingServis
             }
         }
 
-        private void cmdUcitavanjeVozila_Click(object sender, EventArgs e)
+        private void cmdUcitavanjeVozilaFizickog_Click(object sender, EventArgs e)
         {
             try
             {
@@ -141,8 +142,6 @@ namespace ParkingServis
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
 
         private void cmdDodajJavnoMesto_Click(object sender, EventArgs e)
@@ -350,7 +349,7 @@ namespace ParkingServis
             {
                 ISession s = DataLayer.GetSession();
 
-                Vozilo p = new Vozilo();
+                Vozilo p = new VoziloPravnog();
 
                 p = s.Load<Vozilo>(8);
 
@@ -397,7 +396,7 @@ namespace ParkingServis
             {
                 ISession s = DataLayer.GetSession();
 
-                Vozilo p = new Vozilo();
+                Vozilo p = new VoziloFizickog();
 
                 p = s.Load<Vozilo>(4);
 
@@ -423,7 +422,7 @@ namespace ParkingServis
             }
         }
 
-        private void cmdDodavanjeVozila_Click(object sender, EventArgs e)
+        private void cmdDodavanjeVozilaFizickog_Click(object sender, EventArgs e)
         {
             try
             {
@@ -431,17 +430,16 @@ namespace ParkingServis
 
                 FizickoLice fl = s.Load<FizickoLice>(4);
 
-                Vozilo v = new Vozilo()
+                VoziloFizickog vf = new VoziloFizickog()
                 {
-                    Registarcija = "BG203FL",
-                    Proizvodjac = "Fiat",
+                    BrSaobracajne = "15453",
+                    FizickoLice = fl,
                     Model = "Punto",
-                    BrSaobracajne = "3161",
-                    FizPravnoFleg = 0
+                    Proizvodjac = "Fiat",
+                    Registarcija = "lk456",
                 };
-                v.FizickoLice = fl;
 
-                s.Save(v);
+                s.Save(vf);
 
                 s.Flush();
                 s.Close();
@@ -452,12 +450,330 @@ namespace ParkingServis
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmdUcitavanjeVozilaPravnog_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                Vozilo v = s.Load<Vozilo>(7);
+
+                MessageBox.Show($"Model: {v.Model}, Registracija: {v.Registarcija}");
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdDodavanjeVozilaPravnog_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                PravnoLice pl = s.Load<PravnoLice>(4);
+
+                Vozilo vp = new VoziloPravnog()
+                {
+                    BrSaobracajne = "53435",
+                    PravnoLice = pl,
+                    Model = "Punto",
+                    Proizvodjac = "Fiat",
+                    Registarcija = "lk406",
+                };
+
+                s.Save(vp);
+
+                s.Flush();
+                s.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdQueryOver_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IList<FizickoLice> fizLica = s.QueryOver<FizickoLice>()
+                                              .List<FizickoLice>();
+
+                string prikaz = "";
+                foreach (var lice in fizLica)
+                {
+                    prikaz += $"{lice.Id}\t{lice.Ime}\t{lice.Prezime}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdCreateQuery_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("from Parking");
+
+                IList<Parking> parkinzi = q.List<Parking>();
+
+                string prikaz = "";
+                foreach (var parking in parkinzi)
+                {
+                    prikaz += $"{parking.Id}\t{parking.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdCreateQuery1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                // Svi parkinzi sa garazom
+                IQuery q = s.CreateQuery("from Parking as p where p.GarazaFleg = true");
+
+                IList<Parking> parkinzi = q.List<Parking>();
+
+                string prikaz = "";
+                foreach (var parking in parkinzi)
+                {
+                    prikaz += $"{parking.Id}\t{parking.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdUpitSaParametrima_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("from JavnoMesto as j where j.Zauzetost = ? and j.Sprat >= ?");
+
+                q.SetParameter(0, "Ne");
+                q.SetInt32(1, 5);
+
+                IList<JavnoMesto> javnaMesta = q.List<JavnoMesto>();
+
+                string prikaz = "";
+                foreach (var mesto in javnaMesta)
+                {
+                    prikaz += $"{mesto.Id}\t{mesto.PripadaParkingu.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdUpitSaParametrima1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("select j.PripadaParkingu from JavnoMesto as j "+
+                                         "where j.Zauzetost = :zauzetost and j.Sprat < :sprat");
+                q.SetString("zauzetost", "Da");
+                q.SetInt32("sprat", 5);
+
+                IList<Parking> parkinzi = q.List<Parking>();
+
+                string prikaz = "";
+                foreach (var parking in parkinzi)
+                {
+                    prikaz += $"{parking.Id}\t{parking.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdEnumerable_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("from Parking");
+
+                IEnumerable<Parking> parkinzi = q.Enumerable<Parking>();
+
+                string prikaz = "";
+                foreach (var parking in parkinzi)
+                {
+                    prikaz += $"{parking.Id}\t{parking.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdScalar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("select count(*) from JavnoMesto as j where j.Zauzetost = 'Ne'");
+
+                Int64 broj = q.UniqueResult<Int64>();
+
+                MessageBox.Show($"Broj slobodnih javnih mesta: {broj}");
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdUniqueResult_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("select p from Parking p where p.Id = 7");
+
+                Parking p = q.UniqueResult<Parking>();
+
+                MessageBox.Show(p.Naziv);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdMultipleResult_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("select m.Zona, count(m) from UlicnoMesto m "+
+                                         "group by m.Zona");
+
+                IList<object[]> result = q.List<object[]>();
+
+                string prikaz = "";
+                foreach (object[] r in result)
+                {
+                    prikaz += $"Zona: {r[0]}\tBroj: {r[1]}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cmdPaging_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                IQuery q = s.CreateQuery("from Parking");
+                q.SetFirstResult(2);
+                q.SetMaxResults(5);
+
+                IList<Parking> parkinzi = q.List<Parking>();
+
+                string prikaz = "";
+                foreach (var p in parkinzi)
+                {
+                    prikaz += $"{p.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
+
+        private void cmdCriteria_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ISession s = DataLayer.GetSession();
+
+                ICriteria c = s.CreateCriteria<Parking>();
+
+                c.Add(Expression.Ge("Zona", 2));
+                c.Add(Expression.Eq("PodNadTip", "Nad"));
+
+                IList<Parking> parkinzi = c.List<Parking>();
+
+                string prikaz = "";
+                foreach (var p in parkinzi)
+                {
+                    prikaz += $"{p.Naziv}\n";
+                }
+                MessageBox.Show(prikaz);
+
+                s.Close();
+
+            }
+            catch (Exception ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+        }
     }
 }
-
-
-/*Ucitavanja za pravno fizicko jednokratnu i pretplatnicku rade 
- * a dodavanja nisam stigo da testiram jer kod osoba imamo problem 
- * treba nam prvo vozilo koje nema vlasnika pa da mu dodelimo 
- * vlasnika kad dodajemo fizicko ili pravno dodavanje jednokratne i pretplatnicke kupovine bi trebalo da radi
-*/
