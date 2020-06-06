@@ -2,26 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using DatabaseAccess;
-using Microsoft.AspNetCore.Http;
 using DatabaseAccess.DTOs;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ParkingServisAPI.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class ParkingController : ControllerBase
+    [ApiController]
+    public class JednokratnaKupovinaController : ControllerBase
     {
         [HttpGet]
-        [Route("PreuzmiParkinge")]
+        [Route("PreuzmiJednokratneKupovine")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetParkinzi()
+        public IActionResult GetJednokratneKupovine()
         {
             try
             {
-                return new JsonResult(DataProvider.VratiSveParkinge());
+                return new JsonResult(DataProvider.VratiSveJednokratneKupovine());
             }
             catch (Exception ex)
             {
@@ -30,14 +29,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpPost]
-        [Route("DodajParking")]
+        [Route("DodajJednokratnuKupovinu")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult AddParking([FromBody] ParkingView parking)
+        public IActionResult AddJednokratnaKupovina([FromBody] JednokratnaKupovinaView jednokratna)
         {
             try
             {
-                DataProvider.DodajParking(parking);
+                DataProvider.DodajJednokratnuKupovinu(jednokratna);
                 return Ok();
             }
             catch (Exception ex)
@@ -47,14 +46,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpPut]
-        [Route("PromeniParking")]
+        [Route("PromeniJednokratnuKupovinu")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult ChangeParking([FromBody] ParkingView parking)
+        public IActionResult ChangeParking([FromBody] JednokratnaKupovinaView jednokratna)
         {
             try
             {
-                DataProvider.AzurirajParking(parking);
+                DataProvider.AzurirajJednokratnuKupovinu(jednokratna);
                 return Ok();
             }
             catch (Exception ex)
@@ -64,14 +63,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("IzbrisiParking/{id}")]
+        [Route("IzbrisiJednokratnuKupovinu/{id}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult DeleteParking(int id)
+        public IActionResult DeleteJednokratnaKupovina(int id)
         {
             try
             {
-                DataProvider.ObrisiParking(id);
+                DataProvider.ObrisiJednokratnuKupovinu(id);
                 return Ok();
             }
             catch (Exception ex)

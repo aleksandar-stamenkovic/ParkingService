@@ -2,26 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using DatabaseAccess;
-using Microsoft.AspNetCore.Http;
 using DatabaseAccess.DTOs;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ParkingServisAPI.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
-    public class ParkingController : ControllerBase
+    [ApiController]
+    public class JavnoMestoController : ControllerBase
     {
         [HttpGet]
-        [Route("PreuzmiParkinge")]
+        [Route("PreuzmiJavnaMesta")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetParkinzi()
+        public IActionResult GetJavnaMesta()
         {
             try
             {
-                return new JsonResult(DataProvider.VratiSveParkinge());
+                return new JsonResult(DataProvider.VratiSvaJavnaMesta());
             }
             catch (Exception ex)
             {
@@ -30,14 +29,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpPost]
-        [Route("DodajParking")]
+        [Route("DodajJavnoMesto")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult AddParking([FromBody] ParkingView parking)
+        public IActionResult AddJavnoMesto([FromBody] JavnoMestoView javnoMesto)
         {
             try
             {
-                DataProvider.DodajParking(parking);
+                DataProvider.DodajJavnoMesto(javnoMesto);
                 return Ok();
             }
             catch (Exception ex)
@@ -47,14 +46,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpPut]
-        [Route("PromeniParking")]
+        [Route("PromeniJavnoMesto")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult ChangeParking([FromBody] ParkingView parking)
+        public IActionResult ChangeJavnoMesto([FromBody] JavnoMestoView javnoMesto)
         {
             try
             {
-                DataProvider.AzurirajParking(parking);
+                DataProvider.AzurirajJavnoMesto(javnoMesto);
                 return Ok();
             }
             catch (Exception ex)
@@ -64,14 +63,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("IzbrisiParking/{id}")]
+        [Route("IzbrisiJavnoMesto/{id}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult DeleteParking(int id)
+        public IActionResult DeleteJavnoMestog(int id)
         {
             try
             {
-                DataProvider.ObrisiParking(id);
+                DataProvider.ObrisiJavnoMesto(id);
                 return Ok();
             }
             catch (Exception ex)

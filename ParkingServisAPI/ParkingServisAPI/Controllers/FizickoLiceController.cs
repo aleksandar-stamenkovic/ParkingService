@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using DatabaseAccess;
-using Microsoft.AspNetCore.Http;
 using DatabaseAccess.DTOs;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
-namespace ParkingServisAPI.Controllers
+namespace OracleWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ParkingController : ControllerBase
+    public class FizickoLiceController : ControllerBase
     {
         [HttpGet]
-        [Route("PreuzmiParkinge")]
+        [Route("PreuzmiFizickaLica")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetParkinzi()
+        public IActionResult GetFizickaLica()
         {
             try
             {
-                return new JsonResult(DataProvider.VratiSveParkinge());
+                return new JsonResult(DataProvider.VratiFizickaLica());
             }
             catch (Exception ex)
             {
@@ -30,14 +26,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpPost]
-        [Route("DodajParking")]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("DodajFizickoLice")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult AddParking([FromBody] ParkingView parking)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult AddFizickoLice([FromBody]FizickoLiceView p)
         {
             try
             {
-                DataProvider.DodajParking(parking);
+                DataProvider.DodajFizickoLice(p);
                 return Ok();
             }
             catch (Exception ex)
@@ -47,14 +43,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpPut]
-        [Route("PromeniParking")]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("PromeniFizickoLice")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult ChangeParking([FromBody] ParkingView parking)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult ChangeFizickoLice([FromBody]FizickoLiceView p)
         {
             try
             {
-                DataProvider.AzurirajParking(parking);
+                DataProvider.AzurirajFizickoLice(p);
                 return Ok();
             }
             catch (Exception ex)
@@ -64,14 +60,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpDelete]
-        [Route("IzbrisiParking/{id}")]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [Route("IzbrisiFizickoLice/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult DeleteParking(int id)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult DeleteFizickoLice(int id)
         {
             try
             {
-                DataProvider.ObrisiParking(id);
+                DataProvider.obrisiFizickoLice(id);
                 return Ok();
             }
             catch (Exception ex)
