@@ -29,14 +29,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpPost]
-        [Route("DodajJednokratnuKupovinu")]
+        [Route("DodajJednokratnuKupovinu/{voziloID}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult AddJednokratnaKupovina([FromBody] JednokratnaKupovinaView jednokratna)
+        public IActionResult AddJednokratnaKupovina([FromBody] JednokratnaKupovinaView jednokratna, int voziloID)
         {
             try
             {
-                DataProvider.DodajJednokratnuKupovinu(jednokratna);
+                DataProvider.DodajJednokratnuKupovinu(jednokratna, voziloID);
                 return Ok();
             }
             catch (Exception ex)

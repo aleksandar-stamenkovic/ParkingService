@@ -26,14 +26,14 @@ namespace OracleWebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("DodajVozilo")]
+        [Route("DodajVozilo/{fizPravnoFleg}/{liceID}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult AddVozilo([FromBody]VoziloView p)
+        public IActionResult AddVozilo([FromBody]VoziloView p, int fizPravnoFleg, int liceID)
         {
             try
             {
-                DataProvider.DodajVozilo(p);
+                DataProvider.DodajVozilo(p, fizPravnoFleg, liceID);
                 return Ok();
             }
             catch (Exception ex)

@@ -29,14 +29,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpPost]
-        [Route("DodajJavnoMesto")]
+        [Route("DodajJavnoMesto/{parkingID}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult AddJavnoMesto([FromBody] JavnoMestoView javnoMesto)
+        public IActionResult AddJavnoMesto([FromBody] JavnoMestoView javnoMesto, int parkingID)
         {
             try
             {
-                DataProvider.DodajJavnoMesto(javnoMesto);
+                DataProvider.DodajJavnoMesto(javnoMesto, parkingID);
                 return Ok();
             }
             catch (Exception ex)

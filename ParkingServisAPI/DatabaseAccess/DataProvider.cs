@@ -150,13 +150,13 @@ namespace DatabaseAccess
             return javnaMesta;
         }
 
-        public static void DodajJavnoMesto(JavnoMestoView j)
+        public static void DodajJavnoMesto(JavnoMestoView j, int parkingID)
         {
             try
             {
                 ISession s = DataLayer.GetSession();
 
-                Parking p = s.Load<Parking>(j.PripadaParkingu.Id);
+                Parking p = s.Load<Parking>(parkingID);
 
                 JavnoMesto o = new JavnoMesto
                 {
@@ -369,13 +369,13 @@ namespace DatabaseAccess
             return jednokratneKupovine;
         }
 
-        public static void DodajJednokratnuKupovinu(JednokratnaKupovinaView j)
+        public static void DodajJednokratnuKupovinu(JednokratnaKupovinaView j, int voziloID)
         {
             try
             {
                 ISession s = DataLayer.GetSession();
 
-                Vozilo v = s.Load<Vozilo>(j.PripadaVozilu.Id);
+                Vozilo v = s.Load<Vozilo>(voziloID);
 
                 JednokratnaKupovina o = new JednokratnaKupovina
                 {
@@ -470,13 +470,13 @@ namespace DatabaseAccess
             return kupovine;
         }
 
-        public static void DodajPretplatnickuKupovinu(PretplatnickaKupovinaView p)
+        public static void DodajPretplatnickuKupovinu(PretplatnickaKupovinaView p, int voziloID)
         {
             try
             {
                 ISession s = DataLayer.GetSession();
 
-                Vozilo v = s.Load<Vozilo>(p.PripadaVozilu.Id);
+                Vozilo v = s.Load<Vozilo>(voziloID);
 
                 PretplatnickaKupovina o = new PretplatnickaKupovina
                 {
@@ -791,17 +791,17 @@ namespace DatabaseAccess
         }
 
 
-        public static void DodajVozilo(VoziloView p)
+        public static void DodajVozilo(VoziloView p, int fizPravnoFleg, int liceID)
         {
             try
             {
                 ISession s = DataLayer.GetSession();
 
-                FizickoLice fl = s.Load<FizickoLice>(p.FizickoLice.Id);
-                PravnoLice pl = s.Load<PravnoLice>(p.PravnoLice.Id);
                 Vozilo o;
-                if(fl != null)
+
+                if(fizPravnoFleg == 0)
                 {
+                    FizickoLice fl = s.Load<FizickoLice>(liceID);
                     o = new VoziloFizickog
                     {
                         Registarcija = p.Registarcija,
@@ -815,6 +815,7 @@ namespace DatabaseAccess
                 }
                 else
                 {
+                    PravnoLice pl = s.Load<PravnoLice>(liceID);
                     o = new VoziloPravnog
                     {
                         Registarcija = p.Registarcija,
@@ -845,8 +846,17 @@ namespace DatabaseAccess
             {
                 ISession s = DataLayer.GetSession();
 
-                FizickoLice fl = s.Load<FizickoLice>(p.FizickoLice.Id);
-                PravnoLice pl = s.Load<PravnoLice>(p.PravnoLice.Id);
+                FizickoLice fl = null;
+                PravnoLice pl = null;
+
+                if(p.FizPravnoFleg == 0)
+                {
+                    fl = s.Load<FizickoLice>(p.FizickoLice.Id);
+                }
+                else
+                {
+                    pl = s.Load<PravnoLice>(p.PravnoLice.Id);
+                }
 
                 Vozilo o = s.Load<Vozilo>(p.Id);
                 o.Registarcija = p.Registarcija;
@@ -925,15 +935,24 @@ namespace DatabaseAccess
         }
 
 
-        public static void DodajZakup(ZakupView p)
+        public static void DodajZakup(ZakupView p, int mestoID, int voziloID)
         {
             try
             {
                 ISession s = DataLayer.GetSession();
 
-                UlicnoMesto um = s.Load<UlicnoMesto>(p.UlicnoMesto.Id);
-                JavnoMesto jm = s.Load<JavnoMesto>(p.JavnoMesto.Id);
-                Vozilo vz = s.Load<Vozilo>(p.Vozilo.Id);
+                UlicnoMesto um = null;
+                JavnoMesto jm = null;
+                Vozilo vz = s.Load<Vozilo>(voziloID);
+
+                if(p.UlJavnoFleg == false)
+                {
+                    um = s.Load<UlicnoMesto>(mestoID);
+                }
+                else
+                {
+                    jm = s.Load<JavnoMesto>(mestoID);
+                }
 
                 Zakup o = new Zakup
                 {
@@ -963,9 +982,18 @@ namespace DatabaseAccess
             {
                 ISession s = DataLayer.GetSession();
 
-                UlicnoMesto um = s.Load<UlicnoMesto>(p.UlicnoMesto.Id);
-                JavnoMesto jm = s.Load<JavnoMesto>(p.JavnoMesto.Id);
+                UlicnoMesto um = null;
+                JavnoMesto jm = null;
                 Vozilo vz = s.Load<Vozilo>(p.Vozilo.Id);
+
+                if(p.UlJavnoFleg == false)
+                {
+                    um = s.Load<UlicnoMesto>(p.UlicnoMesto.Id);
+                }
+                else
+                {
+                    jm = s.Load<JavnoMesto>(p.JavnoMesto.Id);
+                }
 
                 Zakup o = s.Load<Zakup>(p.Id);
                 o.Vreme = p.Vreme;

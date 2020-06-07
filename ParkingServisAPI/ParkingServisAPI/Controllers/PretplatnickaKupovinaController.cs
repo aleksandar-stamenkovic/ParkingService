@@ -29,14 +29,14 @@ namespace ParkingServisAPI.Controllers
         }
 
         [HttpPost]
-        [Route("DodajPretplatnickuKupovinu")]
+        [Route("DodajPretplatnickuKupovinu/{voziloID}")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult AddPretplatnickaKupovina([FromBody] PretplatnickaKupovinaView pretplatnicka)
+        public IActionResult AddPretplatnickaKupovina([FromBody] PretplatnickaKupovinaView pretplatnicka, int voziloID)
         {
             try
             {
-                DataProvider.DodajPretplatnickuKupovinu(pretplatnicka);
+                DataProvider.DodajPretplatnickuKupovinu(pretplatnicka, voziloID);
                 return Ok();
             }
             catch (Exception ex)

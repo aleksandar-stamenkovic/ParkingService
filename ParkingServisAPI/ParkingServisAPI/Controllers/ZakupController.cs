@@ -26,14 +26,14 @@ namespace OracleWebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("DodajZakup")]
+        [Route("DodajZakup/{mestoID}/{voziloID}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult AddZakup([FromBody]ZakupView p)
+        public IActionResult AddZakup([FromBody]ZakupView p, int mestoID, int voziloID)
         {
             try
             {
-                DataProvider.DodajZakup(p);
+                DataProvider.DodajZakup(p, mestoID, voziloID);
                 return Ok();
             }
             catch (Exception ex)
